@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93c81bf285d74173866f80dd8a0962ae",
+    "content-hash": "72c58ee75781b0c409028500b3db73a7",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -141,6 +141,54 @@
                 "wordpress"
             ],
             "time": "2020-02-12T18:47:50+00:00"
+        },
+        {
+            "name": "colbycommunications/colby-small-town-jewish-life-theme",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
+                "reference": "71e7ad4b2baa317a43446f4bef6bc68cdb4115cd"
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "illuminate/support": "5.6.*",
+                "php": ">=7.1",
+                "roots/sage-lib": "~9.0.9",
+                "soberwp/controller": "~2.1.0"
+            },
+            "require-dev": {
+                "roots/sage-installer": "~1.6",
+                "squizlabs/php_codesniffer": "^2.8.0"
+            },
+            "type": "wordpress-theme",
+            "autoload": {
+                "psr-4": {
+                    "App\\": "app/"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpcs"
+                ],
+                "post-create-project-cmd": [
+                    "Roots\\Sage\\Installer\\ComposerScript::postCreateProject"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Brandon Waltz",
+                    "email": "brandon.waltz@colby.edu"
+                }
+            ],
+            "description": "Colby WordPress theme for Center for Small Town Jewish Life",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2020-11-23T16:39:47+00:00"
         },
         {
             "name": "composer/installers",
@@ -2172,7 +2220,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "colbycommunications/colby-groups": 20,
-        "colbycommunications/colby-base-theme": 20
+        "colbycommunications/colby-base-theme": 20,
+        "colbycommunications/colby-small-town-jewish-life-theme": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
