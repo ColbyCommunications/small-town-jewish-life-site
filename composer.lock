@@ -148,7 +148,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "b3ef94c25492d84e0489aa97bd276f865b29ce33"
+                "reference": "84bebde57694c963885cf47f5d5f25d61e7d8205"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -188,7 +188,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2020-12-04 18:12:58"
+            "time": "2020-12-14 16:43:51"
         },
         {
             "name": "composer/installers",
@@ -807,16 +807,16 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "5.5.3",
+            "version": "5.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "6f25ae53f3d4058f8dd702c097d5a4a45667af61"
+                "reference": "f074617dd69f466302836d1ae5de75c0bd7b6dfd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/6f25ae53f3d4058f8dd702c097d5a4a45667af61",
-                "reference": "6f25ae53f3d4058f8dd702c097d5a4a45667af61",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/f074617dd69f466302836d1ae5de75c0bd7b6dfd",
+                "reference": "f074617dd69f466302836d1ae5de75c0bd7b6dfd",
                 "shasum": ""
             },
             "require": {
@@ -824,7 +824,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "5.5.3"
+                "wordpress/core-implementation": "5.6.0"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -844,7 +844,7 @@
                 "cms",
                 "wordpress"
             ],
-            "time": "2020-10-30T20:48:12+00:00"
+            "time": "2020-12-08T22:34:23+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -1105,16 +1105,16 @@
         },
         {
             "name": "pristas-peter/wp-graphql-gutenberg",
-            "version": "v0.3.5",
+            "version": "v0.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pristas-peter/wp-graphql-gutenberg.git",
-                "reference": "d47e4c29de14c8cea6d715264001c933dacd69f7"
+                "reference": "119deebe5c63a22f039fcb724af5d3310924faa5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pristas-peter/wp-graphql-gutenberg/zipball/d47e4c29de14c8cea6d715264001c933dacd69f7",
-                "reference": "d47e4c29de14c8cea6d715264001c933dacd69f7",
+                "url": "https://api.github.com/repos/pristas-peter/wp-graphql-gutenberg/zipball/119deebe5c63a22f039fcb724af5d3310924faa5",
+                "reference": "119deebe5c63a22f039fcb724af5d3310924faa5",
                 "shasum": ""
             },
             "require": {
@@ -1138,7 +1138,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Query gutenberg blocks with wp-graphql",
-            "time": "2020-11-21T09:20:52+00:00"
+            "time": "2020-12-10T14:44:27+00:00"
         },
         {
             "name": "psr/container",
@@ -2061,15 +2061,15 @@
         },
         {
             "name": "wpackagist-plugin/cloudflare",
-            "version": "3.8.6",
+            "version": "3.8.7",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/cloudflare/",
-                "reference": "tags/3.8.6"
+                "reference": "tags/3.8.7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/cloudflare.3.8.6.zip",
+                "url": "https://downloads.wordpress.org/plugin/cloudflare.3.8.7.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -2221,15 +2221,15 @@
         },
         {
             "name": "wpackagist-theme/twentyseventeen",
-            "version": "2.4",
+            "version": "2.5",
             "source": {
                 "type": "svn",
                 "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "2.4"
+                "reference": "2.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.4.zip",
+                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.5.zip",
                 "reference": null,
                 "shasum": null
             },
