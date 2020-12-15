@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "72c58ee75781b0c409028500b3db73a7",
+    "content-hash": "4ea53aec18e3924d43a74579f68bc866",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -2101,15 +2101,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "2.9.14",
+            "version": "3.0.14",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/2.9.14"
+                "reference": "tags/3.0.14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.2.9.14.zip",
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.0.14.zip",
                 "reference": null,
                 "shasum": null
             },
