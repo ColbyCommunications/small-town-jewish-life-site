@@ -148,7 +148,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "f7149153c4d3c16155ac234b7f84ce63ea7f209a"
+                "reference": "fdc19b3a3b4ea79f3b3d6362aaae6b7db36285ea"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -188,7 +188,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2020-12-15 21:40:04"
+            "time": "2020-12-15 21:49:59"
         },
         {
             "name": "composer/installers",
