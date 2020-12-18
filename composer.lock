@@ -148,7 +148,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "534db08db595f8d4ddd43ec8680f5d7e9ecf2ab6"
+                "reference": "2a90cb1bffb2da20d8714b341b2d748af971a956"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -188,7 +188,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2020-12-17 17:39:14"
+            "time": "2020-12-18 14:38:29"
         },
         {
             "name": "composer/installers",
@@ -1386,16 +1386,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.2.0",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256"
+                "reference": "f789e7ead4c79e04ca9a6d6162fc629c89bd8054"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256",
-                "reference": "b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/f789e7ead4c79e04ca9a6d6162fc629c89bd8054",
+                "reference": "f789e7ead4c79e04ca9a6d6162fc629c89bd8054",
                 "shasum": ""
             },
             "require": {
@@ -1430,20 +1430,20 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2020-10-28T21:31:18+00:00"
+            "time": "2020-12-08T17:02:38+00:00"
         },
         {
             "name": "symfony/debug",
-            "version": "v4.4.17",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/debug.git",
-                "reference": "65fe7b49868378319b82da3035fb30801b931c47"
+                "reference": "5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/debug/zipball/65fe7b49868378319b82da3035fb30801b931c47",
-                "reference": "65fe7b49868378319b82da3035fb30801b931c47",
+                "url": "https://api.github.com/repos/symfony/debug/zipball/5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544",
+                "reference": "5dfc7825f3bfe9bb74b23d8b8ce0e0894e32b544",
                 "shasum": ""
             },
             "require": {
@@ -1482,20 +1482,20 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2020-10-28T20:42:29+00:00"
+            "time": "2020-12-10T16:34:26+00:00"
         },
         {
             "name": "symfony/finder",
-            "version": "v4.4.17",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "9f1d1d883b79a91ef320c0c6e803494e042ef36e"
+                "reference": "ebd0965f2dc2d4e0f11487c16fbb041e50b5c09b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/9f1d1d883b79a91ef320c0c6e803494e042ef36e",
-                "reference": "9f1d1d883b79a91ef320c0c6e803494e042ef36e",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/ebd0965f2dc2d4e0f11487c16fbb041e50b5c09b",
+                "reference": "ebd0965f2dc2d4e0f11487c16fbb041e50b5c09b",
                 "shasum": ""
             },
             "require": {
@@ -1526,7 +1526,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2020-11-17T19:45:34+00:00"
+            "time": "2020-12-08T16:59:59+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1659,16 +1659,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v4.4.17",
+            "version": "v4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "84821e6a14a637e817f25d11147388695b6f790a"
+                "reference": "c1001b7d75b3136648f94b245588209d881c6939"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/84821e6a14a637e817f25d11147388695b6f790a",
-                "reference": "84821e6a14a637e817f25d11147388695b6f790a",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/c1001b7d75b3136648f94b245588209d881c6939",
+                "reference": "c1001b7d75b3136648f94b245588209d881c6939",
                 "shasum": ""
             },
             "require": {
@@ -1726,7 +1726,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2020-11-27T06:35:49+00:00"
+            "time": "2020-12-08T16:59:59+00:00"
         },
         {
             "name": "symfony/translation-contracts",
