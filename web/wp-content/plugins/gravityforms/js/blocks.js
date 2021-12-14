@@ -112,7 +112,7 @@ __webpack_require__.r(__webpack_exports__);
 /**
  * WordPress dependencies
  */
-const { PanelBody, Placeholder, SelectControl, ServerSideRender, TextControl, TextareaControl, ToggleControl } = wp.components;
+const { PanelBody, Placeholder, SelectControl, ServerSideRender, TextControl, ToggleControl } = wp.components;
 const { InspectorControls } = wp.editor;
 const { Component, Fragment } = wp.element;
 const { __ } = wp.i18n;
@@ -204,7 +204,7 @@ class Edit extends Component {
 
 	render() {
 
-		let { formId, title, description, ajax, tabindex, formPreview, fieldValues } = this.props.attributes;
+		let { formId, title, description, ajax, tabindex, formPreview } = this.props.attributes;
 
 		const { setAttributes, isSelected } = this.props;
 
@@ -217,7 +217,7 @@ class Edit extends Component {
 
 		const setFormIdFromPlaceholder = e => this.setFormId(e.target.value);
 
-		const controls = [isSelected && gform_block_form.forms && gform_block_form.forms.length > 0 && React.createElement(
+		const controls = [isSelected && React.createElement(
 			InspectorControls,
 			{ key: 'inspector' },
 			React.createElement(
@@ -258,13 +258,6 @@ class Edit extends Component {
 					label: __('AJAX', 'gravityforms'),
 					checked: ajax,
 					onChange: toggleAjax
-				}),
-				React.createElement(TextareaControl, {
-					label: __('Field Values', 'gravityforms'),
-					value: fieldValues,
-					onChange: fieldValues => {
-						setAttributes({ fieldValues });
-					}
 				}),
 				React.createElement(TextControl, {
 					className: 'gform-block__tabindex',
@@ -316,7 +309,7 @@ class Edit extends Component {
 						)
 					)
 				),
-				gform_block_form.forms && gform_block_form.forms.length > 0 && React.createElement(
+				React.createElement(
 					'form',
 					null,
 					React.createElement(
@@ -327,15 +320,6 @@ class Edit extends Component {
 							{ key: form.value, value: form.value },
 							form.label
 						))
-					)
-				),
-				(!gform_block_form.forms || gform_block_form.forms && gform_block_form.forms.length === 0) && React.createElement(
-					'form',
-					null,
-					React.createElement(
-						'p',
-						null,
-						__('You must have at least one form to use the block.', 'gravityforms')
 					)
 				)
 			)];
@@ -420,25 +404,22 @@ registerBlockType('gravityforms/form', {
 			type: 'string'
 		},
 		title: {
-			type: 'boolean',
+			type: 'bool',
 			default: true
 		},
 		description: {
-			type: 'boolean',
+			type: 'bool',
 			default: true
 		},
 		ajax: {
-			type: 'boolean',
+			type: 'bool',
 			default: false
 		},
 		tabindex: {
 			type: 'string'
 		},
-		fieldValues: {
-			type: 'string'
-		},
 		formPreview: {
-			type: 'boolean',
+			type: 'bool',
 			default: true
 		}
 	},
@@ -456,19 +437,19 @@ registerBlockType('gravityforms/form', {
 					}
 				},
 				title: {
-					type: 'boolean',
+					type: 'bool',
 					shortcode: ({ named: { title } }) => {
 						return 'true' === title;
 					}
 				},
 				description: {
-					type: 'boolean',
+					type: 'bool',
 					shortcode: ({ named: { description } }) => {
 						return 'true' === description;
 					}
 				},
 				ajax: {
-					type: 'boolean',
+					type: 'bool',
 					shortcode: ({ named: { ajax } }) => {
 						return 'true' === ajax;
 					}

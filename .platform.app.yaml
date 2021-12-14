@@ -5,7 +5,7 @@
 name: app
 
 # The runtime the application uses.
-type: "php:7.2"
+type: "php:7.4"
 
 # Configuration of the build of the application.
 build:
@@ -30,6 +30,7 @@ mounts:
   "/web/.well-known/pki-validation":
     source: local
     source_path: web
+
 # The configuration of app when it is exposed to the web.
 web:
   locations: !include project/platform/web.locations.yaml

@@ -128,36 +128,15 @@ class GF_Field extends stdClass implements ArrayAccess {
 		}
 	}
 
-	/**
-	 * The getter method of the field property.
-	 *
-	 * @since unknown
-	 * @since 2.4.19  Add whitelist for the size property.
-	 *
-	 * @param string $key The field property.
-	 *
-	 * @return bool|mixed
-	 */
 	public function &__get( $key ) {
 
-		switch ( $key ) {
+		switch( $key ) {
 			case '_context_properties' :
 				_doing_it_wrong( '$field->_context_properties', 'Use $field->get_context_property() instead.', '2.3' );
-				$value = false;
-
-				return $value;
+				return false;
 			case 'adminOnly' :
 				// intercept 3rd parties trying to get the adminOnly property and fetch visibility property instead
 				$value = $this->visibility == 'administrative'; // set and return variable to avoid notice
-
-				return $value;
-			case 'size':
-				$value = '';
-
-				if ( isset( $this->size ) ) {
-					$value = GFCommon::whitelist( $this->size, array( 'small', 'medium', 'large' ) );
-				}
-
 				return $value;
 			default:
 				if ( ! isset( $this->$key ) ) {
@@ -271,11 +250,10 @@ class GF_Field extends stdClass implements ArrayAccess {
 	 * @return string
 	 */
 	public function get_field_content( $value, $force_frontend_label, $form ) {
-		$form_id = (int) rgar( $form, 'id' );
 
 		$field_label = $this->get_field_label( $force_frontend_label, $value );
 
-		$validation_message_id = 'validation_message_' . $form_id . '_' . $this->id;
+		$validation_message_id = 'validation_message_' . $form['id'] . '_' . $this->id;
 		$validation_message = ( $this->failed_validation && ! empty( $this->validation_message ) ) ? sprintf( "<div id='%s' class='gfield_description validation_message' aria-live='polite'>%s</div>", $validation_message_id, $this->validation_message ) : '';
 
 		$is_form_editor  = $this->is_form_editor();
@@ -992,7 +970,7 @@ class GF_Field extends stdClass implements ArrayAccess {
 	 * @return string
 	 */
 	public function get_first_input_id( $form ) {
-		$form_id = (int) rgar( $form, 'id' );
+		$form_id = $form['id'];
 
 		$is_entry_detail = $this->is_entry_detail();
 		$is_form_editor  = $this->is_form_editor();
@@ -1000,11 +978,6 @@ class GF_Field extends stdClass implements ArrayAccess {
 
 		if ( is_array( $this->inputs ) ) {
 			foreach ( $this->inputs as $input ) {
-				// Validate if input id is in x.x format.
-				if ( ! is_numeric( $input['id'] ) ) {
-					break;
-				}
-
 				if ( ! isset( $input['isHidden'] ) || ! $input['isHidden'] ) {
 					$field_id .= str_replace( '.', '_', $input['id'] );
 					break;
@@ -1014,8 +987,7 @@ class GF_Field extends stdClass implements ArrayAccess {
 			$field_id .= $this->id;
 		}
 
-		// The value is used as an HTML attribute, escape it.
-		return esc_attr( $field_id );
+		return $field_id;
 	}
 
 	/**
@@ -1209,7 +1181,7 @@ class GF_Field extends stdClass implements ArrayAccess {
 		}
 
 		if ( $this->size ) {
-			$this->size = GFCommon::whitelist( $this->size, $this->get_size_choices( true ) );
+			$this->size = wp_strip_all_tags( $this->size );
 		}
 
 		if ( $this->errorMessage ) {
@@ -1403,34 +1375,6 @@ class GF_Field extends stdClass implements ArrayAccess {
 		// Fix an issue where fields can show up as invalid in the form editor if the form was updated using the form object returned after a validation failure.
 		unset( $this->failed_validation );
 		unset( $this->validation_message );
-	}
-
-	/**
-	 * Returns the choices for the Field Size setting.
-	 *
-	 * @since 2.4.19
-	 *
-	 * @param bool $values_only Indicates if only the choice values should be returned.
-	 *
-	 * @return array
-	 */
-	public function get_size_choices( $values_only = false ) {
-		$choices = array(
-			array( 'value' => 'small', 'text' => __( 'Small', 'gravityforms' ) ),
-			array( 'value' => 'medium', 'text' => __( 'Medium', 'gravityforms' ) ),
-			array( 'value' => 'large', 'text' => __( 'Large', 'gravityforms' ) ),
-		);
-
-		/**
-		 * Allows the choices for Field Size setting to be customized.
-		 *
-		 * @since 2.4.19
-		 *
-		 * @param array $choices An array of choices (value and text) to be included in the Field Size setting.
-		 */
-		$choices = apply_filters( 'gform_field_size_choices', $choices );
-
-		return $values_only ? wp_list_pluck( $choices, 'value' ) : $choices;
 	}
 
 	// # FIELD FILTER UI HELPERS ---------------------------------------------------------------------------------------

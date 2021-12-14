@@ -97,5 +97,7 @@ class GF_Fields {
 	}
 }
 
-// Load all the field files automatically.
-GFCommon::glob_require_once( '/includes/fields/class-gf-field-*.php' );
+// load all the field files automatically
+foreach ( glob( plugin_dir_path( __FILE__ ) . 'class-gf-field-*.php' ) as $gf_field_filename ) {
+	require_once( $gf_field_filename );
+}

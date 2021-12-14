@@ -64,8 +64,7 @@ var gfieldmap = function( options ) {
 
 	self.setupData = function() {
 
-		var data = jQuery( '#' + self.options.fieldId ).val();
-		self.data = data ? jQuery.parseJSON( data ) : null;
+		self.data = jQuery.parseJSON( jQuery( '#' + self.options.fieldId ).val() );
 
 		if ( ! self.data ) {
 			self.data = [ {
