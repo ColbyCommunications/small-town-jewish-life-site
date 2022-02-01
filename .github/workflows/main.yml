@@ -73,24 +73,14 @@ jobs:
     needs: test_prep
     steps:
       - uses: actions/checkout@v2
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-          registry-url: 'https://npm.pkg.github.com'
-      - run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
-      - run: npm install -g lighthouse-batch
-      - name: Download a single artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: sitemap
       - name: Audit URLs using Lighthouse
-        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --performance 98 --fail-fast --print
-      - name: Archive Summary.json
-        uses: actions/upload-artifact@v2
+        uses: treosh/lighthouse-ci-action@v8
         with:
-          name: lighthouse summary
-          path: report/lighthouse/summary.json
+          urls: |
+            https://jewishlife.colby.edu/
+            https://jewishlife.colby.edu/about/
+          configPath: .github/lighthouse/main.json
+          uploadArtifacts: true # save results as an action artifacts
+          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          runs: 3
       
