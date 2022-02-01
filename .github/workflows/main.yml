@@ -73,14 +73,23 @@ jobs:
     needs: test_prep
     steps:
       - uses: actions/checkout@v2
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+      - name: Setup node
+        uses: actions/setup-node@v2
         with:
-          urls: |
-            https://jewishlife.colby.edu/
-            https://jewishlife.colby.edu/about/
-          configPath: .github/lighthouse/main.json
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
-          runs: 3
-      
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
+      - run: npm install -g lighthouse-batch
+      - name: Download a single artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: sitemap
+      - name: running sitespeed.io container with arguments and optional Docker options
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:19.3.0 --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit -b chrome https://$( platform domains --format=plain --no-header --columns=name ) || exit_code=$?
+      - name: Archive SiteSpeed Results
+        uses: actions/upload-artifact@v2
+        with:
+          name: sitespeed-result
+          path: sitespeed-result  
