@@ -1,5 +1,8 @@
 {
     "ci": {
+        "collect": {
+            "settings": { "throttling": { "cpuSlowdownMultiplier": 1 } }
+        },
         "assert": {
             "preset": "lighthouse:no-pwa",
             "assertions": {
