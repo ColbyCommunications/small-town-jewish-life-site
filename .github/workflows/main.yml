@@ -15,27 +15,27 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      # - name: Install Psh CLI
-      #   run: |
-      #     curl -sS https://platform.sh/cli/installer | php
+      - name: Install Psh CLI
+        run: |
+          curl -sS https://platform.sh/cli/installer | php
 
-      # - name: Load certificate
-      #   run: ~/.platformsh/bin/platform ssh-cert:load -y -vv
+      - name: Load certificate
+        run: ~/.platformsh/bin/platform ssh-cert:load -y -vv
 
-      # - name: Add Psh to trusted keys
-      #   continue-on-error: true
-      #   run: |
-      #     for ip in $(dig @8.8.8.8 git.us-2.platform.sh git.us.platform.sh git.us-4.platform.sh +short); do \
-      #       ssh-keyscan git.us.platform.sh, git.us-2.platform.sh, git.us-4s.platform.sh,$ip; \
-      #       ssh-keyscan $ip; \
-      #     done 2>/dev/null >> ~/.ssh/known_hosts
-      #     cat ~/.ssh/known_hosts
+      - name: Add Psh to trusted keys
+        continue-on-error: true
+        run: |
+          for ip in $(dig @8.8.8.8 git.us-2.platform.sh git.us.platform.sh git.us-4.platform.sh +short); do \
+            ssh-keyscan git.us.platform.sh, git.us-2.platform.sh, git.us-4s.platform.sh,$ip; \
+            ssh-keyscan $ip; \
+          done 2>/dev/null >> ~/.ssh/known_hosts
+          cat ~/.ssh/known_hosts
 
-      # - name: Spin up environment
-      #   run: |
-      #     ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-      #     ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
-      #     ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_REF#refs/heads/} --force
+      - name: Spin up environment
+        run: |
+          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_REF#refs/heads/} --force
 
   test_prep:
     runs-on: ubuntu-latest
@@ -91,9 +91,7 @@ jobs:
         with:
           name: sitemap
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --shm-size=1g --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1-plus1 https://soblu50.colby.edu --plugins.add analysisstorer --plugins.add /lighthouse 
-        # docker run --shm-size=1g --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1-plus1 https://www.sitespeed.io/ --plugins.add analysisstorer --plugins.add /lighthouse --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit -b chrome  -n 3
-
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:19.3.0 --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit -b chrome https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 3
       - name: Archive SiteSpeed Results
         uses: actions/upload-artifact@v2
         with:
