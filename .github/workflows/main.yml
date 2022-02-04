@@ -42,20 +42,20 @@ jobs:
     needs: deploy_platform
     steps:
       - uses: actions/checkout@v2
-      # - name: Install Psh CLI
-      #   run: |
-      #     curl -sS https://platform.sh/cli/installer | php
-      #     ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+      - name: Install Psh CLI
+        run: |
+          curl -sS https://platform.sh/cli/installer | php
+          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
 
-      # - name: Setup node
-      #   uses: actions/setup-node@v2
-      #   with:
-      #     node-version: '14.x'
-      #     registry-url: 'https://npm.pkg.github.com'
-      # - run: npm install
-      #   env:
-      #     NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
-      # - run: npm install -g sitemap_utils jsonlint sitemap commander
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - run: npm install
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
+      - run: npm install -g sitemap_utils jsonlint sitemap commander
       
       - name: Download Sitemap
         run: |
