@@ -91,7 +91,7 @@ jobs:
         with:
           name: sitemap
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:19.3.0 --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit -b chrome https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 3
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1 -b chrome --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 3
       - name: Archive SiteSpeed Results
         uses: actions/upload-artifact@v2
         with:
