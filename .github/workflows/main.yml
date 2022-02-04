@@ -31,46 +31,14 @@ jobs:
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
 
-      # - name: Spin up environment
-      #   run: |
-      #     ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-      #     ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
-      #     ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_REF#refs/heads/} --force
-
-  test_prep:
-    runs-on: ubuntu-latest
-    needs: deploy_platform
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install Psh CLI
+      - name: Spin up environment
         run: |
-          curl -sS https://platform.sh/cli/installer | php
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_REF#refs/heads/} --force
 
-      - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-          registry-url: 'https://npm.pkg.github.com'
-      - run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
-      - run: npm install -g sitemap_utils jsonlint sitemap commander
-      
-      - name: Download Sitemap
-        run: |
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
-          cat .github/sitemap.json
-
-      - name: Archive sitemap
-        uses: actions/upload-artifact@v2
-        with:
-          name: sitemap
-          path: .github/sitemap.json
-
-  lighthouse_master:
+  test_performance:
     runs-on: ubuntu-latest
-    needs: test_prep
     steps:
       - uses: actions/checkout@v2
       - name: Install Psh CLI
@@ -91,7 +59,7 @@ jobs:
         with:
           name: sitemap
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1 -b chrome --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 3
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1 -b chrome --outputFolder sitespeed-result --budget.configPath .github/config/main.json --budget.output junit https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 3
       - name: Archive SiteSpeed Results
         uses: actions/upload-artifact@v2
         with:

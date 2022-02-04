@@ -5,10 +5,8 @@
             "pageLoadTime": 2000,
             "fullyLoaded": 2000,
             "FirstVisualChange": 1000,
-            "LastVisualChange": 1200,
             "SpeedIndex": 1200,
             "PerceptualSpeedIndex": 1200,
-            "VisualReadiness": 200,
             "VisualComplete95": 1190
         }
     }
