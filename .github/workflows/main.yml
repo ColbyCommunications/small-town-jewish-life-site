@@ -47,7 +47,7 @@ jobs:
           curl -sS https://platform.sh/cli/installer | php
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1 -b chrome --outputFolder sitespeed-result --budget.configPath .github/config/main.json --budget.output junit https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 3
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:21.6.1 -b chrome --outputFolder sitespeed-result --budget.configPath .github/config/main.json --budget.output junit https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) -n 5
       - name: Archive SiteSpeed Results
         uses: actions/upload-artifact@v2
         with:
