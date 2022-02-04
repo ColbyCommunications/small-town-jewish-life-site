@@ -59,7 +59,7 @@ jobs:
       
       - name: Download Sitemap
         run: |
-          flatten_sitemap --sitemap https://$( platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
           cat .github/sitemap.json
 
       - name: Archive sitemap
@@ -73,6 +73,10 @@ jobs:
     needs: test_prep
     steps:
       - uses: actions/checkout@v2
+      - name: Install Psh CLI
+        run: |
+          curl -sS https://platform.sh/cli/installer | php
+          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
       - name: Setup node
         uses: actions/setup-node@v2
         with:
@@ -87,7 +91,7 @@ jobs:
         with:
           name: sitemap
       - name: running sitespeed.io container with arguments and optional Docker options
-        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:19.3.0 --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit -b chrome https://$( platform domains --format=plain --no-header --columns=name ) || exit_code=$?
+        run: docker run --rm -v "$(pwd):/sitespeed.io" sitespeedio/sitespeed.io:19.3.0 --outputFolder sitespeed-result --budget.configPath .github/lighthouse/main.json --budget.output junit -b chrome https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ) || exit_code=$?
       - name: Archive SiteSpeed Results
         uses: actions/upload-artifact@v2
         with:
