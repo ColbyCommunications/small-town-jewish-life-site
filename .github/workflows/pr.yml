@@ -35,7 +35,7 @@ jobs:
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           ~/.platformsh/bin/platform environment:branch ${GITHUB_HEAD_REF} dev --title=${GITHUB_HEAD_REF} --type="staging"
           ~/.platformsh/bin/platform environment:activate ${GITHUB_HEAD_REF} --project=${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform sync data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --yes
+          ~/.platformsh/bin/platform sync code data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --yes
           ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_HEAD_REF} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
 
   test_prep:
