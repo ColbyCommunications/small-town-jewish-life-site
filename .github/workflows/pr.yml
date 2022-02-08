@@ -30,11 +30,10 @@ jobs:
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
 
-      - name: Checkout tools repo
-        uses: actions/checkout@v2
-        with:
-          repository: 4nvswumupeimi@git.us-4.platform.sh:4nvswumupeimi.git
-          path: platform-remote
+      - name: Git Magic
+        run: |
+          which git
+          git clone ${{ secrets.PLATFORM_PROJECT_ID }}@git.us-2.platform.sh:${{ secrets.PLATFORM_PROJECT_ID }}.git platform-remote
 
       # - name: Spin up environment
       #   run: |
