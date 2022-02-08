@@ -32,7 +32,7 @@ jobs:
 
       - name: Git Magic
         run: |
-          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote
+          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_HEAD_REF}
           cd platform-remote
           git status
 
