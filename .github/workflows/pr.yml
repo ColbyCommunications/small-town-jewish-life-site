@@ -33,6 +33,8 @@ jobs:
       - name: Git Magic
         run: |
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote
+          cd platform-remote
+          git status
 
       # - name: Spin up environment
       #   run: |
