@@ -34,12 +34,12 @@ jobs:
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
 
-      - name: Spin up environment
-        run: |
-          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform environment:activate ${{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform sync data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=dev --yes
-          ~/.platformsh/bin/platform environment:push -vv --target=${{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${{ env.GITHUB_HEAD_REF }} --force
+      # - name: Spin up environment
+      #   run: |
+      #     ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+      #     ~/.platformsh/bin/platform environment:activate ${{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }}
+      #     ~/.platformsh/bin/platform sync data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=dev --yes
+      #     ~/.platformsh/bin/platform environment:push -vv --target=${{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${{ env.GITHUB_HEAD_REF }} --force
 
   test_prep:
     runs-on: ubuntu-latest
