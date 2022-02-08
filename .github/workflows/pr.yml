@@ -16,7 +16,7 @@ jobs:
       
       - name: Find PR Branch
         run: |
-          echo "Running on pr: ${{ steps.branch-name.outputs.current_branch }}"
+          echo "Running on pr: ${{ GITHUB_HEAD_REF }}"
 
       - name: Install Psh CLI
         run: |
@@ -37,9 +37,9 @@ jobs:
       - name: Spin up environment
         run: |
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform environment:activate ${ GITHUB_HEAD_REF } --project=${{ secrets.PLATFORM_PROJECT_ID }}
           ~/.platformsh/bin/platform sync data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=dev --yes
-          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_REF#refs/heads/} --force
+          ~/.platformsh/bin/platform environment:push -vv --target=${ GITHUB_HEAD_REF } --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${ GITHUB_HEAD_REF } --force
 
   test_prep:
     runs-on: ubuntu-latest
