@@ -32,8 +32,7 @@ jobs:
 
       - name: Git Magic
         run: |
-          which git
-          git clone ${{ secrets.PLATFORM_PROJECT_ID }}@git.us-2.platform.sh:${{ secrets.PLATFORM_PROJECT_ID }}.git platform-remote
+          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote
 
       # - name: Spin up environment
       #   run: |
