@@ -1,7 +1,7 @@
-name: Run PR Audit
+name: Run PR Audit1
 on:
   pull_request:
-    types: [opened]
+    types: [opened, reopened]
 env:
   PLATFORMSH_CLI_TOKEN: ${{ secrets.PLATFORMSH_CLI_TOKEN }}
   WEBMASTER_GITHUB_ACTIONS_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
@@ -33,9 +33,10 @@ jobs:
       - name: Spin up environment
         run: |
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform sync data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=dev --yes
-          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_REF#refs/heads/} --force
+          ~/.platformsh/bin/platform environment:branch ${GITHUB_HEAD_REF} dev --title=${GITHUB_HEAD_REF} --type="staging"
+          ~/.platformsh/bin/platform environment:activate ${GITHUB_HEAD_REF} --project=${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform sync code data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --yes
+          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_HEAD_REF} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
 
   test_prep:
     runs-on: ubuntu-latest
