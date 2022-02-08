@@ -13,6 +13,10 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
+      
+      - name: Find PR Branch
+        run: |
+          echo "Running on pr: ${{ steps.branch-name.outputs.current_branch }}"
 
       - name: Install Psh CLI
         run: |
