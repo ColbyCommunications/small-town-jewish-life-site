@@ -34,7 +34,8 @@ jobs:
         run: |
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_HEAD_REF}
           cd platform-remote
-          git status
+          git pull -X theirs https://github.com/ColbyCommunications/small-town-jewish-life-site.git ${GITHUB_HEAD_REF}
+          git status; git commit -am "build PR" || echo "No changes, nothing to commit!" && git push origin ${GITHUB_HEAD_REF})
 
       # - name: Spin up environment
       #   run: |
