@@ -16,7 +16,7 @@ jobs:
       
       - name: Find PR Branch
         run: |
-          echo "Running on pr: ${{ env.GITHUB_HEAD_REF }}"
+          echo "Running on pr: ${GITHUB_HEAD_REF}"
 
       - name: Install Psh CLI
         run: |
