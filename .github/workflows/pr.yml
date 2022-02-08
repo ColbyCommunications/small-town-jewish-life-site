@@ -37,9 +37,9 @@ jobs:
       - name: Spin up environment
         run: |
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          ~/.platformsh/bin/platform environment:activate {{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }}
+          ~/.platformsh/bin/platform environment:activate ${{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }}
           ~/.platformsh/bin/platform sync data --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=dev --yes
-          ~/.platformsh/bin/platform environment:push -vv --target={{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment={{ env.GITHUB_HEAD_REF }} --force
+          ~/.platformsh/bin/platform environment:push -vv --target=${{ env.GITHUB_HEAD_REF }} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${{ env.GITHUB_HEAD_REF }} --force
 
   test_prep:
     runs-on: ubuntu-latest
