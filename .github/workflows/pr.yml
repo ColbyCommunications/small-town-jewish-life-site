@@ -41,7 +41,7 @@ jobs:
           git config --global user.email "webmaster@colby.edu"
           git config --global user.name "Colby Webmaster"
           git pull -X theirs git@github.com:ColbyCommunications/small-town-jewish-life-site.git ${GITHUB_HEAD_REF}
-          git status; git commit -am "build PR" || echo "No changes, nothing to commit!" && git push origin ${GITHUB_HEAD_REF}
+          git status; git commit -am "build PR" || echo "No changes, nothing to commit!" && git push platform/${GITHUB_HEAD_REF}
 
       # - name: Spin up environment
       #   run: |
