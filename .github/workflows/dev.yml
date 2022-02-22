@@ -148,7 +148,7 @@ jobs:
                 </div>
                 <div id="branches" x-data="loadBranchData()" x-init="init()">
                   <ul>
-                    <template x-for="branch in data" :key="bramnch.name">
+                    <template x-for="branch in data" :key="branch.name">
                       <li><a x-bind:href="branch.name" target="_blank" x-text="branch.name"></a></li>                                   
                     </template>
                   </ul>
