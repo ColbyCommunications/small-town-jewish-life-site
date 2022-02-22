@@ -148,7 +148,7 @@ jobs:
                 </div>
                 <div id="branches" x-data="loadBranchData()" x-init="init()">
                   <ul>
-                    <template x-for="branch in data.branches" :key="branch.name">
+                    <template x-for="branch in data" :key="branch.name">
                       <li><a x-bind:href="branch.name" target="_blank" x-text="branch.name"></a></li>                                   
                     </template>
                   </ul>
@@ -163,7 +163,7 @@ jobs:
                         .then(res => res.json())
                         .then(data => {
                           console.log(data);
-                          this.data = data;
+                          this.data = data.branches;
                       });
                     }
                   } 
@@ -187,7 +187,7 @@ jobs:
                 </div>
                 <div id="branches" x-data="loadCommitsData()" x-init="init()">
                   <ul>
-                    <template x-for="commit in data.commits" :key="commit.hash">
+                    <template x-for="commit in data" :key="commit.hash">
                       <li><a x-bind:href="commit.hash" target="_blank" x-text="commit.hash + ' - ' + commit.date"></a></li>                                   
                     </template>
                   </ul>
@@ -202,7 +202,7 @@ jobs:
                         .then(res => res.json())
                         .then(data => {
                           console.log(data);
-                          this.data = data;
+                          this.data = data.commits;
                       });
                     }
                   } 
