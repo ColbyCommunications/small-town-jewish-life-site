@@ -129,7 +129,7 @@ jobs:
           path: report/lighthouse
       - name: Build Pages
         run: |
-          ls -la report
+          ls -la report/lighthouse
           node ./scripts/build_gh_pages.js --branch=${GITHUB_REF#refs/heads/} --commit=${{ github.sha }}
           mv report/lighthouse/*.html public/lighthouse/${GITHUB_REF#refs/heads/}/${{ github.sha }}
           mv report/lighthouse/summary.json public/lighthouse/public/lighthouse/${GITHUB_REF#refs/heads/}/${{ github.sha }}
