@@ -162,6 +162,7 @@ jobs:
                       fetch('./branches.json')
                         .then(res => res.json())
                         .then(data => {
+                          console.log(data);
                           this.branches = data.branches;
                       });
                     }
@@ -182,7 +183,7 @@ jobs:
             <body>
               <div class="container">
                 <div>
-                  <h1>Branches</h1>
+                  <h1>Commits</h1>
                 </div>
                 <div id="branches" x-data="loadCommitsData()" x-init="init()">
                   <ul>
@@ -193,13 +194,14 @@ jobs:
                 </div>
               </div>
               <script>
-                function loadBranchData() {
+                function loadCommitsData() {
                   return {
                     data: [],
                     init() {
                       fetch('./commits.json')
                         .then(res => res.json())
                         .then(data => {
+                          console.log(data);
                           this.commits = data.commits;
                       });
                     }
