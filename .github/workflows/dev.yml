@@ -122,6 +122,10 @@ jobs:
           git config --global user.name "Colby Webmaster"
           git clone --branch ghpages git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git public
           rm -rf public/.git
+      - name: Download lighthouse results
+        uses: actions/download-artifact@v2
+        with:
+          name: results
       - name: Build Pages
         run: |
           node ./scripts/build_gh_pages.js --branch=${GITHUB_REF#refs/heads/} --commit=${{ github.sha }}
