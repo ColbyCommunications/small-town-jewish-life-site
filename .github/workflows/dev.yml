@@ -126,6 +126,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: results
+          path: report/lighthouse
       - name: Build Pages
         run: |
           ls -la
