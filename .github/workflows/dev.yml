@@ -38,13 +38,13 @@ jobs:
 
       - name: Spin up environment
         run: |
-          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_HEAD_REF}
+          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
           cd platform-remote
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           git config --global user.email "webmaster@colby.edu"
           git config --global user.name "Colby Webmaster"
-          git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_HEAD_REF}
-          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_HEAD_REF} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
+          git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
+          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
 
   test_prep:
     runs-on: ubuntu-latest
@@ -120,7 +120,7 @@ jobs:
           git clone --branch gh-pages git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git public
       - name: Build Pages
         run: |
-          node ./scripts/build_gh_pages.js --branch=${GITHUB_HEAD_REF}
+          node ./scripts/build_gh_pages.js --branch=${GITHUB_REF#refs/heads/}
       #     cat > public/index.html <<EOL
       #     <!doctype html>
       #     <html>
