@@ -52,7 +52,7 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
         if (err) throw err;
         let branches = JSON.parse(data);
         let noBranch = true;
-        branches.forEach((branch) => {
+        branches.branches.forEach((branch) => {
             if (branch.name === args.branch) {
                 noBranch = false;
             }
@@ -95,9 +95,9 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
         if (err) throw err;
         let commits = JSON.parse(data);
         let noCommit = true;
-        commits.forEach((commit) => {
-            if (commit.hash === args.branch) {
-                noBranch = false;
+        commits.commits.forEach((commit) => {
+            if (commit.hash === args.commit) {
+                noCommit = false;
             }
         });
 
