@@ -28,7 +28,7 @@ const args = getArgs();
 console.log(args);
 
 // make branch and commit dir regardless of if it exists
-fs.mkdir(`./public/lighthouse/${args.branch}/${args.commit}`);
+fs.mkdirSync(`./public/lighthouse/${args.branch}/${args.commit}`, { recursive: true });
 
 // process branches.json
 fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
@@ -74,24 +74,24 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
 });
 
 // process commits.json
-fs.access('./public/lighthouse/commits.json', fs.F_OK, (err) => {
+fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
     if (err) {
         fs.writeFile(
-            './public/lighthouse/commits.json',
+            `./public/lighthouse/${args.branch}/commits.json`,
             JSON.stringify({
                 commits: [{ hash: args.commit, date: Date.now() }],
             }),
             (err) => {
                 if (err) console.log(err);
                 else {
-                    console.log('branches.json written successfully\n');
+                    console.log('commits.json written successfully\n');
                 }
             }
         );
         return;
     }
 
-    fs.readFile('./public/lighthouse/commits.json', (err, data) => {
+    fs.readFile(`./public/lighthouse/${args.branch}/commits.json`, (err, data) => {
         if (err) throw err;
         let commits = JSON.parse(data);
         let noCommit = true;
@@ -106,12 +106,16 @@ fs.access('./public/lighthouse/commits.json', fs.F_OK, (err) => {
                 commits: [{ name: args.commit, date: Date.now() }],
             });
 
-            fs.writeFile('./public/lighthouse/commits.json', JSON.stringify(data), (err) => {
-                if (err) console.log(err);
-                else {
-                    console.log('commits.json written successfully\n');
+            fs.writeFile(
+                `./public/lighthouse/${args.branch}/commits.json`,
+                JSON.stringify(data),
+                (err) => {
+                    if (err) console.log(err);
+                    else {
+                        console.log('commits.json written successfully\n');
+                    }
                 }
-            });
+            );
         }
     });
 });
