@@ -1,4 +1,5 @@
-const { exec } = require('child_process');
+// const { exec } = require('child_process');
+const fs = require('fs');
 
 function getArgs() {
     const args = {};
@@ -21,18 +22,96 @@ function getArgs() {
     return args;
 }
 
+// get args
 const args = getArgs();
 
 console.log(args);
 
-exec('pwd', (error, stdout, stderr) => {
-    if (error) {
-        console.log(`error: ${error.message}`);
+// make branch and commit dir regardless of if it exists
+fs.mkdir(`./public/lighthouse/${args.branch}/${args.commit}`);
+
+// process branches.json
+fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
+    if (err) {
+        fs.writeFile(
+            './public/lighthouse/branches.json',
+            JSON.stringify({
+                branches: [{ name: args.branch }],
+            }),
+            (err) => {
+                if (err) console.log(err);
+                else {
+                    console.log('branches.json written successfully\n');
+                }
+            }
+        );
         return;
     }
-    if (stderr) {
-        console.log(`stderr: ${stderr}`);
+
+    fs.readFile('./public/lighthouse/branches.json', (err, data) => {
+        if (err) throw err;
+        let branches = JSON.parse(data);
+        let noBranch = true;
+        branches.forEach((branch) => {
+            if (branch.name === args.branch) {
+                noBranch = false;
+            }
+        });
+
+        if (noBranch) {
+            let data = Object.assign(branches, {
+                branches: [{ name: args.branch }],
+            });
+
+            fs.writeFile('./public/lighthouse/branches.json', JSON.stringify(data), (err) => {
+                if (err) console.log(err);
+                else {
+                    console.log('branches.json written successfully\n');
+                }
+            });
+        }
+    });
+});
+
+// process commits.json
+fs.access('./public/lighthouse/commits.json', fs.F_OK, (err) => {
+    if (err) {
+        fs.writeFile(
+            './public/lighthouse/commits.json',
+            JSON.stringify({
+                commits: [{ hash: args.commit, date: Date.now() }],
+            }),
+            (err) => {
+                if (err) console.log(err);
+                else {
+                    console.log('branches.json written successfully\n');
+                }
+            }
+        );
         return;
     }
-    console.log(`stdout: ${stdout}`);
+
+    fs.readFile('./public/lighthouse/commits.json', (err, data) => {
+        if (err) throw err;
+        let commits = JSON.parse(data);
+        let noCommit = true;
+        commits.forEach((commit) => {
+            if (commit.hash === args.branch) {
+                noBranch = false;
+            }
+        });
+
+        if (noCommit) {
+            let data = Object.assign(commits, {
+                commits: [{ name: args.commit, date: Date.now() }],
+            });
+
+            fs.writeFile('./public/lighthouse/commits.json', JSON.stringify(data), (err) => {
+                if (err) console.log(err);
+                else {
+                    console.log('commits.json written successfully\n');
+                }
+            });
+        }
+    });
 });
