@@ -103,7 +103,7 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
 
         if (noCommit) {
             let data = Object.assign(commits, {
-                commits: [{ name: args.commit, date: Date.now() }],
+                commits: [{ hash: args.commit, date: Date.now() }],
             });
 
             fs.writeFile(
