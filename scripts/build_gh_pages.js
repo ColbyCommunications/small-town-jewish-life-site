@@ -23,7 +23,7 @@ function getArgs() {
 }
 
 function formatDate(date) {
-    var hours = date.getHours();
+    var hours = date.getHours() - 5;
     var minutes = date.getMinutes();
     var ampm = hours >= 12 ? 'pm' : 'am';
     hours = hours % 12;
@@ -93,19 +93,13 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
 
 // process commits.json
 fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
-    let now = new Date(Date.now() * 1000);
+    let now = convertUTCDateToLocalDate(new Date());
 
     if (err) {
         fs.writeFile(
             `./public/lighthouse/${args.branch}/commits.json`,
             JSON.stringify({
-                commits: [
-                    {
-                        hash: args.commit,
-                        date: now.toLocaleString('en-US', { timeZoneName: 'short' }),
-                        dateRaw: now,
-                    },
-                ],
+                commits: [{ hash: args.commit, date: formatDate(now), dateRaw: now }],
             }),
             (err) => {
                 if (err) console.log(err);
@@ -141,11 +135,7 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
                 `./public/lighthouse/${args.branch}/commits.json`,
                 JSON.stringify({
                     commits: [
-                        {
-                            hash: args.commit,
-                            date: now.toLocaleString('en-US', { timeZoneName: 'short' }),
-                            dateRaw: now,
-                        },
+                        { hash: args.commit, date: formatDate(now), dateRaw: now },
                         ...commits.commits,
                     ],
                 }),

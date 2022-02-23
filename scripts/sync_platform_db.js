@@ -37,8 +37,8 @@ exec(
             return;
         }
 
-        let matches = stdout.match(/(\d+)/);
-        childSize = matches[0];
+        let matchesChild = stdout.match(/(\d+)/);
+        childSize = matchesChild[0];
     }
 );
 
@@ -73,7 +73,8 @@ exec(
             return;
         }
 
-        parentSize = stdout.match(/(\d+)/);
+        let matchesParent = stdout.match(/(\d+)/);
+        parentSize = matchesParent[0];
     }
 );
 
