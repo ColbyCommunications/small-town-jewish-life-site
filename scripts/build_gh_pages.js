@@ -94,7 +94,7 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
         fs.writeFile(
             `./public/lighthouse/${args.branch}/commits.json`,
             JSON.stringify({
-                commits: [{ hash: args.commit, date: formatDate(now) }],
+                commits: [{ hash: args.commit, date: formatDate(now), dateRaw: now }],
             }),
             (err) => {
                 if (err) console.log(err);
@@ -117,10 +117,22 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
         });
 
         if (noCommit) {
+            if (commits.commits.length === 10) {
+                let deletedCommit = commits.commits.pop();
+
+                fs.rmSync(`./public/lighthouse/${args.branch}/${deletedCommit.hash}`, {
+                    recursive: true,
+                    force: true,
+                });
+            }
+
             fs.writeFile(
                 `./public/lighthouse/${args.branch}/commits.json`,
                 JSON.stringify({
-                    commits: [...commits.commits, { hash: args.commit, date: formatDate(now) }],
+                    commits: [
+                        { hash: args.commit, date: formatDate(now), dateRaw: now },
+                        ...commits.commits,
+                    ],
                 }),
                 (err) => {
                     if (err) console.log(err);
