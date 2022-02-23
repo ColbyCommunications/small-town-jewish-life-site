@@ -106,6 +106,8 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
                 commits: [{ hash: args.commit, date: Date.now() }],
             });
 
+            console.log(data);
+
             fs.writeFile(
                 `./public/lighthouse/${args.branch}/commits.json`,
                 JSON.stringify(data),

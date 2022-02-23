@@ -36,15 +36,15 @@ jobs:
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
 
-      - name: Spin up environment
-        run: |
-          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
-          cd platform-remote
-          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          git config --global user.email "webmaster@colby.edu"
-          git config --global user.name "Colby Webmaster"
-          git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
-          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
+      # - name: Spin up environment
+      #   run: |
+      #     ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
+      #     cd platform-remote
+      #     ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+      #     git config --global user.email "webmaster@colby.edu"
+      #     git config --global user.name "Colby Webmaster"
+      #     git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
+      #     ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
 
   test_prep:
     runs-on: ubuntu-latest
@@ -68,7 +68,7 @@ jobs:
       
       - name: Download Sitemap
         run: |
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 1 --randomize
           cat .github/sitemap.json
 
       - name: Archive sitemap
@@ -189,7 +189,7 @@ jobs:
                 <div id="branches" x-data="loadCommitsData()" x-init="init()">
                   <ul>
                     <template x-for="commit in data" :key="commit.hash">
-                      <li><a x-bind:href="commit.hash" target="_blank" x-text="commit.hash + ' - ' + moment(commit.date).format("M/D/YYY h:mm:ss a")"></a></li>                                   
+                      <li><a x-bind:href="commit.hash" target="_blank" x-text="commit.hash + ' - ' + moment(commit.date).format('M/D/YYY h:mm:ss a)"></a></li>                                   
                     </template>
                   </ul>
                 </div>
