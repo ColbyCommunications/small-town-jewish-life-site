@@ -24,6 +24,7 @@ function getArgs() {
 // get args
 const args = getArgs();
 
+let childSize = '';
 exec(
     `~/.platformsh/bin/platform db:size --environment=${args.branch} --format=plain --columns=used --no-header`,
     (error, stdout, stderr) => {
@@ -37,9 +38,11 @@ exec(
         }
 
         let matches = stdout.match(/(\d+)/);
-        const childSize = matches[0];
+        childSize = matches[0];
     }
 );
+
+let parent = '';
 
 exec(
     `~/.platformsh/bin/platform environment:info --format=plain parent`,
@@ -53,10 +56,11 @@ exec(
             return;
         }
 
-        const parent = stdout;
+        parent = stdout;
     }
 );
 
+let parentSize = '';
 exec(
     `~/.platformsh/bin/platform db:size --environment=${parent} --format=plain --columns=used --no-header`,
     (error, stdout, stderr) => {
@@ -69,7 +73,7 @@ exec(
             return;
         }
 
-        const parentSize = stdout.match(/(\d+)/);
+        parentSize = stdout.match(/(\d+)/);
     }
 );
 
