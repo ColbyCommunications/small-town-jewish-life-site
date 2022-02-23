@@ -70,16 +70,18 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
         });
 
         if (noBranch) {
-            let data = Object.assign(branches, {
-                branches: [{ name: args.branch }],
-            });
-
-            fs.writeFile('./public/lighthouse/branches.json', JSON.stringify(data), (err) => {
-                if (err) console.log(err);
-                else {
-                    console.log('branches.json written successfully\n');
+            fs.writeFile(
+                './public/lighthouse/branches.json',
+                JSON.stringify({
+                    branches: [...branches.branches, { name: args.branch }],
+                }),
+                (err) => {
+                    if (err) console.log(err);
+                    else {
+                        console.log('branches.json written successfully\n');
+                    }
                 }
-            });
+            );
         }
     });
 });
@@ -115,15 +117,11 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
         });
 
         if (noCommit) {
-            let data = Object.assign(commits, {
-                commits: [{ hash: args.commit, date: formatDate(now) }],
-            });
-
-            console.log(data);
-
             fs.writeFile(
                 `./public/lighthouse/${args.branch}/commits.json`,
-                JSON.stringify(data),
+                JSON.stringify({
+                    commits: [...commits.commits, { hash: args.commit, date: formatDate(now) }],
+                }),
                 (err) => {
                     if (err) console.log(err);
                     else {
