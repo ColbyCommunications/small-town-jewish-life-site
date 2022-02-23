@@ -93,13 +93,19 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
 
 // process commits.json
 fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
-    let now = convertUTCDateToLocalDate(new Date());
+    let now = new Date(Date.now() * 1000);
 
     if (err) {
         fs.writeFile(
             `./public/lighthouse/${args.branch}/commits.json`,
             JSON.stringify({
-                commits: [{ hash: args.commit, date: formatDate(now), dateRaw: now }],
+                commits: [
+                    {
+                        hash: args.commit,
+                        date: now.toLocaleString('en-US', { timeZoneName: 'short' }),
+                        dateRaw: now,
+                    },
+                ],
             }),
             (err) => {
                 if (err) console.log(err);
@@ -135,7 +141,11 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
                 `./public/lighthouse/${args.branch}/commits.json`,
                 JSON.stringify({
                     commits: [
-                        { hash: args.commit, date: formatDate(now), dateRaw: now },
+                        {
+                            hash: args.commit,
+                            date: now.toLocaleString('en-US', { timeZoneName: 'short' }),
+                            dateRaw: now,
+                        },
                         ...commits.commits,
                     ],
                 }),
