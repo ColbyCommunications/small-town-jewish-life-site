@@ -22,6 +22,17 @@ function getArgs() {
     return args;
 }
 
+function formatDate(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear() + '  ' + strTime;
+}
+
 // get args
 const args = getArgs();
 
@@ -75,11 +86,13 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
 
 // process commits.json
 fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
+    let now = new Date();
+
     if (err) {
         fs.writeFile(
             `./public/lighthouse/${args.branch}/commits.json`,
             JSON.stringify({
-                commits: [{ hash: args.commit, date: Date.now() }],
+                commits: [{ hash: args.commit, date: formatDate(now) }],
             }),
             (err) => {
                 if (err) console.log(err);
@@ -103,7 +116,7 @@ fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
 
         if (noCommit) {
             let data = Object.assign(commits, {
-                commits: [{ hash: args.commit, date: Date.now() }],
+                commits: [{ hash: args.commit, date: formatDate(now) }],
             });
 
             console.log(data);
