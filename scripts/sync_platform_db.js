@@ -74,6 +74,7 @@ exec(
 );
 
 if (parentSize === childSize) {
+    console.log('Syncing databases!');
     exec(
         `~/.platformsh/bin/platform sync data --project=${args.id} --environment=dev --yes`,
         (error, stdout, stderr) => {
@@ -89,4 +90,6 @@ if (parentSize === childSize) {
             const parentSize = stdout.match(/(\d+)/);
         }
     );
+} else {
+    console.log('Databases different! Not syncing');
 }
