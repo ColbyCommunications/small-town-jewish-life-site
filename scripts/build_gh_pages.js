@@ -33,6 +33,11 @@ function formatDate(date) {
     return date.getMonth() + 1 + '/' + date.getDate() + '/' + date.getFullYear() + '  ' + strTime;
 }
 
+function convertUTCDateToLocalDate(date) {
+    var newDate = new Date(date.getTime() - date.getTimezoneOffset() * 60 * 1000);
+    return newDate;
+}
+
 // get args
 const args = getArgs();
 
@@ -88,7 +93,7 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
 
 // process commits.json
 fs.access(`./public/lighthouse/${args.branch}/commits.json`, fs.F_OK, (err) => {
-    let now = new Date();
+    let now = convertUTCDateToLocalDate(new Date());
 
     if (err) {
         fs.writeFile(
