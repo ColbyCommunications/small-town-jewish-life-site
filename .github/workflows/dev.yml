@@ -35,13 +35,13 @@ jobs:
             ssh-keyscan $ip; \
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
-
+  
       - name: Spin up environment
         run: |
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
-          node ./scripts/sync_platform_db.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }}
           cd platform-remote
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+          node ./scripts/sync_platform_db.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }}
           git config --global user.email "webmaster@colby.edu"
           git config --global user.name "Colby Webmaster"
           git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
