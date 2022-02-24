@@ -78,6 +78,9 @@ exec(
     }
 );
 
+console.log('parentSize: ' + parentSize);
+console.log('childSize: ' + childSize);
+
 if (parentSize === childSize) {
     console.log('Syncing databases!');
     exec(
