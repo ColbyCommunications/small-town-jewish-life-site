@@ -231,7 +231,6 @@ jobs:
                     <thead>
                       <tr>
                         <th scope="col">Page</th>
-                        <!--<th scope="col">Score</th>-->
                         <th scope="col">Accessibility</th>
                         <th scope="col">SEO</th>
                         <th scope="col">Best Practices</th>
