@@ -59,7 +59,7 @@ jobs:
         run: |
           ~/.platformsh/bin/platform ssh-cert:load -y -vv
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          node ./scripts/sync_platform_db.sh ${GITHUB_REF#refs/heads/} ${{ secrets.PLATFORM_PROJECT_ID }}
+          node ./scripts/sync_platform_dbs.sh ${GITHUB_REF#refs/heads/} ${{ secrets.PLATFORM_PROJECT_ID }}
 
       - name: Setup node
         uses: actions/setup-node@v2
