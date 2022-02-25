@@ -3,15 +3,15 @@
 BRANCH=$1
 ID=$2
 
-CHILDSIZE=$(~/.platformsh/bin/platform db:size --environment=$BRANCH --format=plain --columns=used --no-header | sed 's/[^0-9]*//g')
+CHILDSIZE=$(~/.platformsh/bin/platform db:size --environment=$BRANCH --format=plain --columns=used --no-header | grep -o -E '[0-9]+')
 PARENT=$(~/.platformsh/bin/platform environment:info --format=plain parent)
-PARENTSIZE=$(~/.platformsh/bin/platform db:size --environment=$PARENT --format=plain --columns=used --no-header | sed 's/[^0-9]*//g')
+PARENTSIZE=$(~/.platformsh/bin/platform db:size --environment=$PARENT --format=plain --columns=used --no-header | grep -o -E '[0-9]+')
 
 echo $PARENTSIZE
 echo $CHILDSIZE
 
 if [[ $PARENTSIZE == $CHILDSIZE ]] ; then
-	~/.platformsh/bin/platform sync data --project=$ID --environment=$BRANCH --yes
+	# ~/.platformsh/bin/platform sync data --project=$ID --environment=$BRANCH --yes
     echo "Synching Databases!"
 else
 	echo "Databases different! Not syncing"
