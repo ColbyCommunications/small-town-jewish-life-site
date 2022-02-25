@@ -25,7 +25,7 @@ function getArgs() {
 const args = getArgs();
 
 let childSize = '';
-exec(
+execSync(
     `~/.platformsh/bin/platform db:size --environment=${args.branch} --format=plain --columns=used --no-header`,
     (error, stdout, stderr) => {
         if (error) {
@@ -44,7 +44,7 @@ exec(
 
 let parent = '';
 
-exec(
+execSync(
     `~/.platformsh/bin/platform environment:info --format=plain parent`,
     (error, stdout, stderr) => {
         if (error) {
@@ -61,7 +61,7 @@ exec(
 );
 
 let parentSize = '';
-exec(
+execSync(
     `~/.platformsh/bin/platform db:size --environment=${parent} --format=plain --columns=used --no-header`,
     (error, stdout, stderr) => {
         if (error) {
@@ -83,8 +83,8 @@ console.log('childSize: ' + childSize);
 
 if (parentSize === childSize) {
     console.log('Syncing databases!');
-    exec(
-        `~/.platformsh/bin/platform sync data --project=${args.id} --environment=dev --yes`,
+    execSync(
+        `~/.platformsh/bin/platform sync data --project=${args.id} --environment=${args.branch} --yes`,
         (error, stdout, stderr) => {
             if (error) {
                 console.log(`error: ${error.message}`);
@@ -94,8 +94,6 @@ if (parentSize === childSize) {
                 console.log(`stderr: ${stderr}`);
                 return;
             }
-
-            const parentSize = stdout.match(/(\d+)/);
         }
     );
 } else {
