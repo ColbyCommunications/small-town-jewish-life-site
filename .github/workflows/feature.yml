@@ -48,9 +48,11 @@ jobs:
         run: |
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           echo "PLATFORM_BRANCH_EXISTS=$(node ./scripts/check_platform_feature_branch.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }})" >> $GITHUB_ENV
-          echo ${{ env.PLATFORM_BRANCH_EXISTS }}
+
+      - name: Test
+        run: echo $PLATFORM_BRANCH_EXISTS
       - name: Spin up environment
-        if: ${{ env.PLATFORM_BRANCH_EXISTS == true }}
+        if: ${{ $PLATFORM_BRANCH_EXISTS == true }}
         run: |
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
           cd platform-remote
