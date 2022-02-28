@@ -39,7 +39,7 @@ exec(
         console.log(stdout.includes(args.branch));
         if (!stdout.includes(args.branch)) {
             execSync(
-                ` ~/.platformsh/bin/platformenvironment:branch ${args.branch} dev`,
+                ` ~/.platformsh/bin/platform environment:branch ${args.branch} dev`,
                 (error, stdout, stderr) => {
                     if (error) {
                         console.log(`error: ${error.message}`);
