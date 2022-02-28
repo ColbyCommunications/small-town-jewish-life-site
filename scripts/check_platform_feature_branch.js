@@ -1,6 +1,6 @@
-const { execSync } = require('child_process');
+const { exec } = require('child_process');
 
-execSync(
+exec(
     '~/.platformsh/bin/platform environment:list --columns=ID --format=plain --no-header',
     (error, stdout, stderr) => {
         if (error) {
