@@ -37,7 +37,7 @@ exec(
         }
 
         console.log(stdout.includes(args.branch));
-        if (stdout.includes(args.branch)) {
+        if (!stdout.includes(args.branch)) {
             exec(
                 `~/.platformsh/bin/platform environment:activate ${args.branch} --project=${args.id}`,
                 (error, stdout, stderr) => {
