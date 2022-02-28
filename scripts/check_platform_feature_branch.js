@@ -1,4 +1,4 @@
-const { exec } = require('child_process');
+const { exec, execSync } = require('child_process');
 
 function getArgs() {
     const args = {};
@@ -38,7 +38,23 @@ exec(
 
         console.log(stdout.includes(args.branch));
         if (!stdout.includes(args.branch)) {
-            exec(
+            execSync(
+                `~/.platformsh/bin/platform environment:push -vv --target=${args.branch} --project=${args.id} --environment=${args.branch} --force`,
+                (error, stdout, stderr) => {
+                    if (error) {
+                        console.log(`error: ${error.message}`);
+                        return;
+                    }
+                    if (stderr) {
+                        console.log(`stderr: ${stderr}`);
+                        return;
+                    }
+
+                    console.log(stdout);
+                }
+            );
+
+            execSync(
                 `~/.platformsh/bin/platform environment:activate ${args.branch} --project=${args.id}`,
                 (error, stdout, stderr) => {
                     if (error) {
