@@ -38,18 +38,21 @@ exec(
 
         console.log(stdout.includes(args.branch));
         if (!stdout.includes(args.branch)) {
-            execSync(` ~/.platformsh/bin/platform ${args.branch} dev`, (error, stdout, stderr) => {
-                if (error) {
-                    console.log(`error: ${error.message}`);
-                    return;
-                }
-                if (stderr) {
-                    console.log(`stderr: ${stderr}`);
-                    return;
-                }
+            execSync(
+                ` ~/.platformsh/bin/platformenvironment:branch ${args.branch} dev`,
+                (error, stdout, stderr) => {
+                    if (error) {
+                        console.log(`error: ${error.message}`);
+                        return;
+                    }
+                    if (stderr) {
+                        console.log(`stderr: ${stderr}`);
+                        return;
+                    }
 
-                console.log(stdout);
-            });
+                    console.log(stdout);
+                }
+            );
         }
     }
 );
