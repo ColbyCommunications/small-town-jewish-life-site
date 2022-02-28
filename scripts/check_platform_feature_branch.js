@@ -38,37 +38,18 @@ exec(
 
         console.log(stdout.includes(args.branch));
         if (!stdout.includes(args.branch)) {
-            execSync(
-                `~/.platformsh/bin/platform environment:push -vv --target=${args.branch} --project=${args.id} --environment=${args.branch} --force`,
-                (error, stdout, stderr) => {
-                    if (error) {
-                        console.log(`error: ${error.message}`);
-                        return;
-                    }
-                    if (stderr) {
-                        console.log(`stderr: ${stderr}`);
-                        return;
-                    }
-
-                    console.log(stdout);
+            execSync(`platform branch ${args.branch}`, (error, stdout, stderr) => {
+                if (error) {
+                    console.log(`error: ${error.message}`);
+                    return;
                 }
-            );
-
-            execSync(
-                `~/.platformsh/bin/platform environment:activate ${args.branch} --project=${args.id}`,
-                (error, stdout, stderr) => {
-                    if (error) {
-                        console.log(`error: ${error.message}`);
-                        return;
-                    }
-                    if (stderr) {
-                        console.log(`stderr: ${stderr}`);
-                        return;
-                    }
-
-                    console.log(stdout);
+                if (stderr) {
+                    console.log(`stderr: ${stderr}`);
+                    return;
                 }
-            );
+
+                console.log(stdout);
+            });
         }
     }
 );
