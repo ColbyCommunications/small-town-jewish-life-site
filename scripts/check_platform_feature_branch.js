@@ -1,10 +1,16 @@
-const { spawn } = require('child_process');
-const environmentList = spawn('~/.platformsh/bin/platform environment:list', [
-    '--columns=ID',
-    '--format=plain',
-    '--no-header',
-]);
+const { execSync } = require('child_process');
 
-environmentList.stdout.on('data', (data) => {
-    console.log(`stdout: ${data}`);
-});
+exec(
+    '~/.platformsh/bin/platform environment:list --columns=ID --format=plain --no-header',
+    (error, stdout, stderr) => {
+        if (error) {
+            console.log(`error: ${error.message}`);
+            return;
+        }
+        if (stderr) {
+            console.log(`stderr: ${stderr}`);
+            return;
+        }
+        console.log(`stdout: ${stdout}`);
+    }
+);
