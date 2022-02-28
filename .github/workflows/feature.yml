@@ -47,9 +47,8 @@ jobs:
       - name: Spin up environment
         run: |
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          node ./scripts/check_platform_feature_branch.js
-        
-
+          node ./scripts/check_platform_feature_branch.js ${GITHUB_REF#refs/heads/} ${{ secrets.PLATFORM_PROJECT_ID }}
+          
   test_prep:
     runs-on: ubuntu-latest
     needs: deploy_platform
