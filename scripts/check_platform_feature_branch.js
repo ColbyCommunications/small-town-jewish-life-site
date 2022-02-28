@@ -37,7 +37,6 @@ exec(
         }
 
         if (stdout.includes(args.branch)) {
-            
             exec(
                 `~/.platformsh/bin/platform environment:activate ${args.branch} --project=${args.id}`,
                 (error, stdout, stderr) => {
@@ -49,10 +48,8 @@ exec(
                         console.log(`stderr: ${stderr}`);
                         return;
                     }
-            
-                    if (stdout.includes(args.branch)) {
-                        ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
-                    }
+
+                    console.log(stdout);
                 }
             );
         }
