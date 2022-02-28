@@ -46,10 +46,10 @@ jobs:
   
       - name: Spin up environment
         run: |
+          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           node ./scripts/check_platform_feature_branch.js
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
           cd platform-remote
-          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           ~/.platformsh/bin/platform environment:activate ${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }}
           git config --global user.email "webmaster@colby.edu"
           git config --global user.name "Colby Webmaster"
