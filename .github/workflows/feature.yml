@@ -37,9 +37,16 @@ jobs:
             ssh-keyscan $ip; \
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
+
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com'
   
       - name: Spin up environment
         run: |
+          node ./scripts/check_platform_feature_branch.js
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
           cd platform-remote
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
