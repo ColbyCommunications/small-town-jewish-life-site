@@ -48,9 +48,6 @@ jobs:
         run: |
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           echo "PLATFORM_BRANCH_EXISTS=$(node ./scripts/check_platform_feature_branch.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }})" >> $GITHUB_ENV
-
-      - name: Test
-        run: echo ${{ env.PLATFORM_BRANCH_EXISTS }}
         
       - name: Spin up environment
         if: ${{ env.PLATFORM_BRANCH_EXISTS == 'true' }}
@@ -62,6 +59,7 @@ jobs:
           git config --global user.name "Colby Webmaster"
           git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
           ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
+  
   test_prep:
     runs-on: ubuntu-latest
     needs: deploy_platform
@@ -84,7 +82,7 @@ jobs:
       
       - name: Download Sitemap
         run: |
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 1 --randomize
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
           cat .github/sitemap.json
 
       - name: Archive sitemap

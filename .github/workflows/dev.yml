@@ -68,7 +68,7 @@ jobs:
       
       - name: Download Sitemap
         run: |
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 1 --randomize
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
           cat .github/sitemap.json
 
       - name: Archive sitemap
