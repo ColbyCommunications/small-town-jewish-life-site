@@ -39,7 +39,7 @@ jobs:
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
           ~/.platformsh/bin/platform environment:delete ${GITHUB_HEAD_REF} --project=${{ secrets.PLATFORM_PROJECT_ID }} --delete-branch
       
-       - name: Clone Pages
+      - name: Clone Pages
         run: |
           git config --global user.email "webmaster@colby.edu"
           git config --global user.name "Colby Webmaster"
@@ -47,6 +47,7 @@ jobs:
           rm -rf public/.git
           rm -rf public/lighthouse/${GITHUB_HEAD_REF}
           node ./scripts/delete_gh_pages.js --branch=${GITHUB_HEAD_REF}
+          
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
