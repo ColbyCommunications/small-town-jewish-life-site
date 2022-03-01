@@ -68,9 +68,17 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
         if (err) throw err;
         let branches = JSON.parse(data);
         let noBranch = true;
+        let noBranchFolder = false;
+
         branches.branches.forEach((branch) => {
             if (branch.name === args.branch) {
                 noBranch = false;
+            }
+        });
+
+        fs.access(`./public/lighthouse/${args.branch}`, function (error) {
+            if (error) {
+                noBranchFolder = true;
             }
         });
 
@@ -79,6 +87,23 @@ fs.access('./public/lighthouse/branches.json', fs.F_OK, (err) => {
                 './public/lighthouse/branches.json',
                 JSON.stringify({
                     branches: [...branches.branches, { name: args.branch }],
+                }),
+                (err) => {
+                    if (err) console.log(err);
+                    else {
+                        console.log('branches.json written successfully\n');
+                    }
+                }
+            );
+        } else if (!noBranch && noBranchFolder) {
+            fs.writeFile(
+                './public/lighthouse/branches.json',
+                JSON.stringify({
+                    branches: [
+                        ...branches.branches.filter(function (branch) {
+                            return branch.name !== args.branch;
+                        }),
+                    ],
                 }),
                 (err) => {
                     if (err) console.log(err);
