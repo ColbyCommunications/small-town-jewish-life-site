@@ -46,6 +46,7 @@ jobs:
           git clone --branch ghpages git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git public
           rm -rf public/.git
           rm -rf public/lighthouse/${GITHUB_HEAD_REF}
+          node ./scripts/delete_gh_pages.js --branch=${GITHUB_HEAD_REF}
       - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
