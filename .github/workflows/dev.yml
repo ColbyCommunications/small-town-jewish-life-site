@@ -68,8 +68,7 @@ jobs:
       
       - name: Download Sitemap
         run: |
-          echo $(cat .github/sitemap.json | jq '.urls |= "[https://$(echo ~/.platformsh/bin/platform environment:info edge_hostname)]"') > .github/sitemap.json
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
+          ./scripts/sitemap.sh
 
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
