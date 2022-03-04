@@ -80,10 +80,9 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
       - run: npm install -g sitemap_utils jsonlint sitemap commander
       
-      - name: Download Sitemap
+      - name: Generate Sitemap
         run: |
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
-          cat .github/sitemap.json
+          ./scripts/sitemap.sh
 
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
