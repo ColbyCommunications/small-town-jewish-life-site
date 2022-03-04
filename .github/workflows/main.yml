@@ -81,6 +81,7 @@ jobs:
       - name: Generate Sitemap
         run: |
           ./scripts/sitemap_master.sh
+          flatten_sitemap --sitemap https://$( platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
 
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
