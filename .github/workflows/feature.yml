@@ -2,7 +2,9 @@ name: Run Tests
 on:
   push:
     branches:
-      - 'dev'
+      - '*'
+      - '!dev'
+      - '!master'
 env:
   PLATFORMSH_CLI_TOKEN: ${{ secrets.PLATFORMSH_CLI_TOKEN }}
   WEBMASTER_GITHUB_ACTIONS_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
@@ -35,17 +37,29 @@ jobs:
             ssh-keyscan $ip; \
           done 2>/dev/null >> ~/.ssh/known_hosts
           cat ~/.ssh/known_hosts
-  
-      # - name: Spin up environment
-      #   run: |
-      #     ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
-      #     cd platform-remote
-      #     ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-      #     git config --global user.email "webmaster@colby.edu"
-      #     git config --global user.name "Colby Webmaster"
-      #     git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
-      #     ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
 
+      - name: Setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+          registry-url: 'https://npm.pkg.github.com'
+  
+      - name: Check Environment Exists
+        run: |
+          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+          echo "PLATFORM_BRANCH_EXISTS=$(node ./scripts/check_platform_feature_branch.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }})" >> $GITHUB_ENV
+        
+      - name: Spin up environment
+        if: ${{ env.PLATFORM_BRANCH_EXISTS == 'true' }}
+        run: |
+          ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
+          cd platform-remote
+          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
+          git config --global user.email "webmaster@colby.edu"
+          git config --global user.name "Colby Webmaster"
+          git pull -X theirs git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git ${GITHUB_REF#refs/heads/}
+          ~/.platformsh/bin/platform environment:push -vv --target=${GITHUB_REF#refs/heads/} --project=${{ secrets.PLATFORM_PROJECT_ID }} --environment=${GITHUB_HEAD_REF} --force
+  
   test_prep:
     runs-on: ubuntu-latest
     needs: deploy_platform
@@ -68,7 +82,8 @@ jobs:
       
       - name: Download Sitemap
         run: |
-          ./scripts/sitemap.sh
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform environment:info edge_hostname )/sitemap_index.xml --config .github/sitemap.json --limit 20 --randomize
+          cat .github/sitemap.json
 
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
@@ -95,7 +110,7 @@ jobs:
         with:
           name: sitemap
       - name: Audit URLs using Lighthouse
-        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --params "--extra-headers=.github/lighthouse_headers.json" --html --print
+        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --html --print
       - name: Archive Lighthouse Results
         uses: actions/upload-artifact@v2
         with:
