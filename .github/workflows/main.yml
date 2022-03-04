@@ -80,7 +80,7 @@ jobs:
       
       - name: Generate Sitemap
         run: |
-          ./scripts/sitemap.sh
+          ./scripts/sitemap_master.sh
 
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
