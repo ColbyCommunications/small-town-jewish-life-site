@@ -108,7 +108,7 @@ jobs:
         with:
           name: sitemap
       - name: Audit URLs using Lighthouse
-        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --params "--extra-headers=.github/lighthouse_headers.json -n 5" --html --print
+        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --params "--extra-headers=.github/lighthouse_headers.json --config .github/lighthouse.json" --html --print
       - name: Archive Lighthouse Results
         uses: actions/upload-artifact@v2
         with:
