@@ -76,7 +76,7 @@ jobs:
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
-      - run: npm install -g sitemap_utils superagent
+      - run: npm install -g sitemap_utils
       
       - name: Generate Sitemap
         run: |
