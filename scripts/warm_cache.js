@@ -1,12 +1,24 @@
-const { fetch } = require('node-fetch');
+const https = require('https');
 const fs = require('fs');
 
-fs.readFile('.github/sitemap.json', async (err, data) => {
+fs.readFile('.github/sitemap.json', (err, data) => {
     if (err) throw err;
     let sitemap = JSON.parse(data);
 
-    sitemap.urls.forEach(async (url) => {
-        const response = await fetch(url);
-        const data = await response.json();
+    sitemap.urls.forEach((url) => {
+        https
+            .get(url, (res) => {
+                let data = '';
+                res.on('data', (chunk) => {
+                    data += chunk;
+                });
+                res.on('end', () => {
+                    data = JSON.parse(data);
+                    console.log(data);
+                });
+            })
+            .on('error', (err) => {
+                console.log(err.message);
+            });
     });
 });
