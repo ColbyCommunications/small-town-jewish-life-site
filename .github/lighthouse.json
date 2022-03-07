@@ -1,5 +1,11 @@
 {
     "ci": {
-        "collect": { "numberOfRuns": 5 }
+        "collect": {
+            "psiStrategy": "desktop",
+            "numberOfRuns": 5,
+            "settings": {
+                "throttlingMethod": "devtools"
+            }
+        }
     }
 }
