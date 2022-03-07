@@ -81,7 +81,7 @@ jobs:
       - name: Generate Sitemap
         run: |
           ./scripts/sitemap_master.sh
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 1 --randomize
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 25 --randomize
       
       - name: Warm Cache
         run: |

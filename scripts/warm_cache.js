@@ -8,7 +8,6 @@ fs.readFile('.github/sitemap.json', (err, data) => {
     sitemap.urls.forEach((url) => {
         https
             .get(url, (res) => {
-                console.log('headers:', res.headers);
                 console.log(res.headers['cf-cache-status']);
             })
             .on('error', (err) => {
