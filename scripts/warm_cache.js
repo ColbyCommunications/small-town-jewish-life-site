@@ -6,7 +6,7 @@ fs.readFile('.github/sitemap.json', (err, data) => {
     let sitemap = JSON.parse(data);
 
     sitemap.urls.forEach((url) => {
-        let options = { url, agent: 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)' };
+        let options = { url, agent: 'Mozilla/5.0' };
         https
             .get(options, (res) => {
                 console.log('headers:', res.headers);
