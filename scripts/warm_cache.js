@@ -17,7 +17,7 @@ fs.readFile('.github/sitemap.json', (err, data) => {
 
         superagent
             .get(url)
-            .set('user-agent', 'node-fetch/1.0 (+https://github.com/bitinn/node-fetch)')
+            .set('user-agent', 'colby-github')
             .end((err, res) => {
                 console.log(res.headers['cf-cache-status'] + `: ${url}`);
             });
