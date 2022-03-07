@@ -76,12 +76,17 @@ jobs:
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
-      - run: npm install -g sitemap_utils jsonlint sitemap commander
+      - run: npm install -g sitemap_utils jsonlint sitemap commander npm install node-fetch@2
       
       - name: Generate Sitemap
         run: |
           ./scripts/sitemap_master.sh
           flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 1 --randomize
+      
+      - name: Warm Cache
+        run: |
+          node ./scripts/warm_cache.js
+          
 
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
