@@ -1,8 +1,0 @@
-{
-    "ci": {
-        "collect": {
-            "psiStrategy": "desktop",
-            "numberOfRuns": 5
-        }
-    }
-}
