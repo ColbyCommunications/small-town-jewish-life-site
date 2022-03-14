@@ -25,7 +25,7 @@ function getArgs() {
 const args = getArgs();
 
 superagent
-    .get(args.url)
+    .get('https://www.colby.edu/flflhigrew')
     .set('user-agent', 'colby-github')
     .set(
         'Cookie',
