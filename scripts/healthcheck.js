@@ -26,6 +26,7 @@ const args = getArgs();
 
 superagent
     .get(args.url)
+    .set('user-agent', 'colby-github')
     .set(
         'Cookie',
         'ColbyAuth=%7B%22email%22%3A%22webmaster%40colby.edu%22%2C%22roles%22%3A%5B%22administrator%22%5D%7D'
