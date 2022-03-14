@@ -1,7 +1,7 @@
 name: Health Check
 on:
   schedule:
-    - cron: "*/10 * * * *"
+    - cron: "*/5 * * * *"
 env:
   PLATFORMSH_CLI_TOKEN: ${{ secrets.PLATFORMSH_CLI_TOKEN }}
   WEBMASTER_GITHUB_ACTIONS_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
@@ -31,9 +31,7 @@ jobs:
       - name: Health Check
         id: healthcheck
         run: |
-          node ./scripts/healthcheck.js --url=https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )
           echo "HEALTH_MESSAGE=$(node ./scripts/healthcheck.js --url=https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ))" >> $GITHUB_ENV
-          echo $HEALTH_MESSAGE
           IS_EMPTY=$(echo $HEALTH_MESSAGE | jq '. | length' )
           echo "::set-output name=is_empty::$IS_EMPTY"
 
