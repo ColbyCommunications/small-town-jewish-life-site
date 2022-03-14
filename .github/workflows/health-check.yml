@@ -18,11 +18,11 @@ jobs:
           curl -sS https://platform.sh/cli/installer | php
           ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
         
-       - name: Setup node
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14.x'
-          registry-url: 'https://npm.pkg.github.com'
+      - name: Setup node
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14.x'
+        registry-url: 'https://npm.pkg.github.com'
 
       - run: npm install
         env:
