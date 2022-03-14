@@ -34,7 +34,7 @@ superagent
     .end((err, res) => {
         let message = {};
         console.log(res.status);
-        switch (res.status / 100) {
+        switch (Math.floor(res.status / 100)) {
             case 4:
                 message = {
                     status: res.status,
