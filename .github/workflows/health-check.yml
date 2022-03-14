@@ -31,7 +31,8 @@ jobs:
       - name: Health Check
         id: healthcheck
         run: |
-          echo "HEALTH_MESSAGE=$(node ./scripts/healthcheck.js --url=https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ))" >> $GITHUB_ENV
+          HEALTH_MESSAGE=$(node ./scripts/healthcheck.js --url=https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name ))
+          echo "HEALTH_MESSAGE=$HEALTH_MESSAGE" >> $GITHUB_ENV
           IS_EMPTY=$(echo $HEALTH_MESSAGE | jq '. | length' )
           echo "::set-output name=is_empty::$IS_EMPTY"
 
