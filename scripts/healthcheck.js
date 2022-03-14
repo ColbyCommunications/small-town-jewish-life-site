@@ -49,5 +49,5 @@ superagent
                 break;
         }
         console.log(message);
-        return message;
+        return JSON.stringify(message);
     });
