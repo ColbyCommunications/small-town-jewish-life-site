@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests - Master
 on:
   push:
     branches:
@@ -41,14 +41,8 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://npm.pkg.github.com'
-  
-      - name: Check Environment Exists
-        run: |
-          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          echo "PLATFORM_BRANCH_EXISTS=$(node ./scripts/check_platform_feature_branch.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }})" >> $GITHUB_ENV
         
       - name: Spin up environment
-        if: ${{ env.PLATFORM_BRANCH_EXISTS == 'true' }}
         run: |
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
           cd platform-remote
@@ -87,7 +81,7 @@ jobs:
         if: ${{ contains(env.DOMAIN, 'colby.edu')}}
         run: |
           ./scripts/sitemap_master.sh
-          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 5 --randomize
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 25 --randomize
       
       - name: Generate Sitemap
         if: ${{ !contains(env.DOMAIN, 'colby.edu')}}
