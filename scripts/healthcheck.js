@@ -25,7 +25,7 @@ function getArgs() {
 const args = getArgs();
 
 superagent
-    .get(args.url)
+    .get('https://www.colby.edu/fdsfdsafdafdasfdsa')
     .set('user-agent', 'colby-github')
     .set(
         'Cookie',
@@ -38,7 +38,7 @@ superagent
                     .post(args.notifyUrl)
                     .send({
                         status: res.status,
-                        text: `The site ${args.url} is returning a 400-level error!`,
+                        text: `<!here> The site ${args.url} is returning a 400-level error! Response code: *${res.status}*`,
                     })
                     .set('accept', 'json')
                     .end((err, res) => {
@@ -51,7 +51,7 @@ superagent
                     .post(args.notifyUrl)
                     .send({
                         status: res.status,
-                        text: `The site ${args.url} is returning a 500-level error!`,
+                        text: `<!here> The site ${args.url} is returning a 500-level error! Response code: *${res.status}*`,
                     })
                     .set('accept', 'json')
                     .end((err, res) => {
