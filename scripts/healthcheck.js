@@ -32,20 +32,31 @@ superagent
         'ColbyAuth=%7B%22email%22%3A%22webmaster%40colby.edu%22%2C%22roles%22%3A%5B%22administrator%22%5D%7D'
     )
     .end((err, res) => {
-        let message = {};
         switch (Math.floor(res.status / 100)) {
             case 4:
-                message = {
-                    status: res.status,
-                    text: `The site ${args.url} is returning a 400-level error!`,
-                };
+                superagent
+                    .post(args.notifyUrl)
+                    .send({
+                        status: res.status,
+                        text: `The site ${args.url} is returning a 400-level error!`,
+                    })
+                    .set('accept', 'json')
+                    .end((err, res) => {
+                        console.log(res);
+                    });
+
                 break;
             case 5:
-                message = {
-                    status: res.status,
-                    text: `The site ${args.url} is returning a 500-level error!`,
-                };
+                superagent
+                    .post(args.notifyUrl)
+                    .send({
+                        status: res.status,
+                        text: `The site ${args.url} is returning a 500-level error!`,
+                    })
+                    .set('accept', 'json')
+                    .end((err, res) => {
+                        console.log(res);
+                    });
                 break;
         }
-        return JSON.stringify(message);
     });
