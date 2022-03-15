@@ -1,4 +1,4 @@
-name: Run Tests
+name: Run Tests - Master
 on:
   push:
     branches:
@@ -41,14 +41,8 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://npm.pkg.github.com'
-  
-      - name: Check Environment Exists
-        run: |
-          ~/.platformsh/bin/platform project:set-remote ${{ secrets.PLATFORM_PROJECT_ID }}
-          echo "PLATFORM_BRANCH_EXISTS=$(node ./scripts/check_platform_feature_branch.js --branch=${GITHUB_REF#refs/heads/} --id=${{ secrets.PLATFORM_PROJECT_ID }})" >> $GITHUB_ENV
         
       - name: Spin up environment
-        if: ${{ env.PLATFORM_BRANCH_EXISTS == 'true' }}
         run: |
           ~/.platformsh/bin/platform project:get ${{ secrets.PLATFORM_PROJECT_ID }} platform-remote --environment=${GITHUB_REF#refs/heads/}
           cd platform-remote
@@ -76,12 +70,30 @@ jobs:
       - run: npm install
         env:
           NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
-      - run: npm install -g sitemap_utils jsonlint sitemap commander
+      - run: npm install -g sitemap_utils
+
+      - name: Set Domain ENV
+        run: |
+          echo "DOMAIN=$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )" >> $GITHUB_ENV
+          echo $DOMAIN
+
+      - name: Generate Sitemap
+        if: ${{ contains(env.DOMAIN, 'colby.edu')}}
+        run: |
+          ./scripts/sitemap_master.sh
+          flatten_sitemap --sitemap https://$( ~/.platformsh/bin/platform domains --format=plain --no-header --columns=name )/sitemap_index.xml --config .github/sitemap.json --limit 25 --randomize
       
       - name: Generate Sitemap
+        if: ${{ !contains(env.DOMAIN, 'colby.edu')}}
         run: |
+          run: |
           ./scripts/sitemap.sh
-
+      
+      - name: Warm Cache
+        if: ${{ contains(env.DOMAIN, 'colby.edu')}}
+        run: |
+          node ./scripts/warm_cache.js
+          
       - name: Archive sitemap
         uses: actions/upload-artifact@v2
         with:
@@ -107,7 +119,7 @@ jobs:
         with:
           name: sitemap
       - name: Audit URLs using Lighthouse
-        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --params "--extra-headers=.github/lighthouse_headers.json" --html --print
+        run: npx lighthouse-batch -s $( jq -r '.urls | join(",")' sitemap.json ) --params "--extra-headers=.github/lighthouse_headers.json --throttling.cpuSlowdownMultiplier=0 --preset=desktop" --html --print
       - name: Archive Lighthouse Results
         uses: actions/upload-artifact@v2
         with:
