@@ -33,7 +33,6 @@ superagent
     )
     .end((err, res) => {
         let message = {};
-        console.log(res.status);
         switch (Math.floor(res.status / 100)) {
             case 4:
                 message = {
@@ -48,6 +47,5 @@ superagent
                 };
                 break;
         }
-        console.log(message);
         return JSON.stringify(message);
     });
