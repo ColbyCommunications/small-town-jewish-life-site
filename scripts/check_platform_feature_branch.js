@@ -53,9 +53,8 @@ exec(
                     console.log(stdout);
                 }
             );
-            return false;
-        } else {
-            return true;
         }
+
+        return true;
     }
 );
