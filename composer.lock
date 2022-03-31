@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55161f39a2ed4d6f2a3e89c353844f97",
+    "content-hash": "c7147e14837e3c939cd592de562267d1",
     "packages": [
         {
             "name": "appsero/client",
@@ -2582,6 +2582,24 @@
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
         },
         {
+            "name": "wpackagist-plugin/wp-crontrol",
+            "version": "1.12.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-crontrol/",
+                "reference": "tags/1.12.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.12.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-crontrol/"
+        },
+        {
             "name": "wpackagist-plugin/wp-saml-auth",
             "version": "1.2.7",
             "source": {
@@ -2598,6 +2616,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wp-saml-auth/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-search-with-algolia",
+            "version": "2.1.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-search-with-algolia/",
+                "reference": "tags/2.1.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-search-with-algolia.2.1.0.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-search-with-algolia/"
         },
         {
             "name": "wpackagist-theme/hello-elementor",
