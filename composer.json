@@ -27,8 +27,7 @@
     "wpackagist-plugin/wp-saml-auth": "^1.1.0",
     "wpackagist-plugin/siteimprove": "1.2.1",
     "wpackagist-plugin/query-monitor": "^3.7.1",
-    "wpackagist-plugin/wp-search-with-algolia": "2.1.0",
-    "wpackagist-plugin/wp-crontrol": "1.12.0"
+    "wpackagist-plugin/wp-search-with-algolia": "2.1.0"
   },
   "authors": [
     {
@@ -59,8 +58,7 @@
     "installer-paths": {
       "web/wp-content/mu-plugins/{$name}": [
         "type:wordpress-muplugin",
-        "wpackagist-plugin/wordpress-seo",
-        "wpackagist-plugin/wp-search-with-algolia"
+        "wpackagist-plugin/wordpress-seo"
       ],
       "web/wp-content/plugins/{$name}": [
         "type:wordpress-plugin"
