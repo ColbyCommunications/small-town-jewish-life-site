@@ -66,5 +66,13 @@
                 "type:wordpress-theme"
             ]
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true,
+            "composer/installers": true,
+            "koodimonni/composer-dropin-installer": true,
+            "johnpbloch/wordpress-core-installer": true
+        }
     }
 }
