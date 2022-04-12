@@ -24,9 +24,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://npm.pkg.github.com'
 
-      - run: npm install
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.WEBMASTER_GITHUB_ACTIONS_TOKEN }}
+      - run: npm install --registry https://registry.npmjs.org superagent@7.0.2
 
       - name: Health Check
         if: github.ref == 'refs/heads/master'
