@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55161f39a2ed4d6f2a3e89c353844f97",
+    "content-hash": "7b15eccac68185dbfaa14bf561c45e77",
     "packages": [
         {
             "name": "brain/hierarchy",
@@ -149,11 +149,11 @@
         },
         {
             "name": "colbycommunications/colby-small-town-jewish-life-theme",
-            "version": "dev-master",
+            "version": "dev-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "64bbbbda56697bf8180a3eb47dfa218b412d2ec6"
+                "reference": "54cf1043c7f83171d021307651765971b32c69c4"
             },
             "require": {
                 "composer/installers": "~1.0",
@@ -166,7 +166,6 @@
                 "roots/sage-installer": "~1.6",
                 "squizlabs/php_codesniffer": "^2.8.0"
             },
-            "default-branch": true,
             "type": "wordpress-theme",
             "autoload": {
                 "psr-4": {
@@ -194,7 +193,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2021-01-18T20:11:55+00:00"
+            "time": "2022-04-13T16:23:37+00:00"
         },
         {
             "name": "composer/installers",
