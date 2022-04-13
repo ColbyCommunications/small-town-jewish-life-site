@@ -36,7 +36,7 @@ unset NPM_CONFIG_PREFIX
 nvm use 10.16.3
 
 # npm registry stuff
-./scripts/npm_registry.sh
+# ./scripts/npm_registry.sh
 
 # run npm install in all colby dependencies
 ./scripts/dependencies-run-install-build.sh
