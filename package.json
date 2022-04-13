@@ -2,7 +2,7 @@
     "name": "@colbycommunications/small-town-jewish-life-site",
     "version": "1.0.0",
     "description": "",
-    "author": "",
+    "author": "colby",
     "license": "None",
     "dependencies": {
         "superagent": "^7.0.0"
