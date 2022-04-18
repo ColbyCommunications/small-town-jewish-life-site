@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "478ba10b264e512dad6b28fb641d497a",
+    "content-hash": "186124c81efce4f083c762da9511b321",
     "packages": [
         {
             "name": "appsero/client",
@@ -243,6 +243,34 @@
             "time": "2022-04-14T16:52:18+00:00"
         },
         {
+            "name": "colbycommunications/colby-ticket",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:ColbyCommunications/colby-ticket.git",
+                "reference": "4de4cbfcfa62f4ffc64273910244b4f53b04bc48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://satis.colby.edu/dist/colbycommunications/colby-ticket/colbycommunications-colby-ticket-4de4cbfcfa62f4ffc64273910244b4f53b04bc48-zip-e1cd7a.zip",
+                "reference": "4de4cbfcfa62f4ffc64273910244b4f53b04bc48",
+                "shasum": "74a16dbe900b77e8acc35e1144b4609ba98b5376"
+            },
+            "type": "wordpress-plugin",
+            "authors": [
+                {
+                    "name": "Brandon Waltz",
+                    "email": "brandon.waltz@colby.edu"
+                }
+            ],
+            "description": "The ColbyTicket plugin for cloud sites",
+            "homepage": "https://github.com/colbycommunications/colby-ticket",
+            "keywords": [
+                "wordpress"
+            ],
+            "time": "2022-04-18T15:47:45+00:00"
+        },
+        {
             "name": "colbycommunications/elementor-pro",
             "version": "3.5.2",
             "source": {
@@ -254,7 +282,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/elementor-pro/colbycommunications-elementor-pro-5d5ef9f064cc28c33af58cf9862d7b184a5b0e65-zip-66455b.zip",
                 "reference": "5d5ef9f064cc28c33af58cf9862d7b184a5b0e65",
-                "shasum": "096a44243c1083cb706f1a373f842f8729832948"
+                "shasum": "533cb519d786c88ec5cdf20fb6574df906065860"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -282,7 +310,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/gravityforms/colbycommunications-gravityforms-5ddb13278d981cafcfc887b0e122c52307dd6d15-zip-34a4a8.zip",
                 "reference": "5ddb13278d981cafcfc887b0e122c52307dd6d15",
-                "shasum": "09baceb098ed12ec5f374b67488970addaec8982"
+                "shasum": "0760f639c0721c73163ff389e2842a6fa57bef77"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -310,7 +338,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/gravityformsconstantcontact/colbycommunications-gravityformsconstantcontact-e4fa42e5c94820726220e431e5a52ec12fc97306-zip-624766.zip",
                 "reference": "e4fa42e5c94820726220e431e5a52ec12fc97306",
-                "shasum": "db3f42e07d742580ca15ad07f0c129b57fdc4f66"
+                "shasum": "d2af6d378900232c474af7401c62510832885618"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -338,7 +366,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/jet-menu/colbycommunications-jet-menu-1e794181466e1b421e9183402e978ca942cedc64-zip-646337.zip",
                 "reference": "1e794181466e1b421e9183402e978ca942cedc64",
-                "shasum": "bebfa1fd73bf054644359564057b66c3215c9bf6"
+                "shasum": "f10ede35907c1bbfbc42fa52db263aa2da1671d1"
             },
             "type": "wordpress-plugin",
             "authors": [
