@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12f94654a0356a507e6f2affac7e7a3f",
+    "content-hash": "478ba10b264e512dad6b28fb641d497a",
     "packages": [
         {
             "name": "appsero/client",
@@ -243,18 +243,18 @@
             "time": "2022-04-14T16:52:18+00:00"
         },
         {
-            "name": "colbycommunications/wp-plugin-elementor-pro",
+            "name": "colbycommunications/elementor-pro",
             "version": "3.5.2",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ColbyCommunications/wp-plugin-elementor-pro.git",
-                "reference": "d3b2bdf271e3cc168ccc41c1e86bf5b16b5c7497"
+                "url": "git@github.com:ColbyCommunications/elementor-pro.git",
+                "reference": "5d5ef9f064cc28c33af58cf9862d7b184a5b0e65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/wp-plugin-elementor-pro/colbycommunications-wp-plugin-elementor-pro-d3b2bdf271e3cc168ccc41c1e86bf5b16b5c7497-zip-e78eb5.zip",
-                "reference": "d3b2bdf271e3cc168ccc41c1e86bf5b16b5c7497",
-                "shasum": "5fb3bbd48407b1a8ef3eca4d75b2cd06e4c471e9"
+                "url": "https://satis.colby.edu/dist/colbycommunications/elementor-pro/colbycommunications-elementor-pro-5d5ef9f064cc28c33af58cf9862d7b184a5b0e65-zip-66455b.zip",
+                "reference": "5d5ef9f064cc28c33af58cf9862d7b184a5b0e65",
+                "shasum": "096a44243c1083cb706f1a373f842f8729832948"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -264,25 +264,25 @@
                 }
             ],
             "description": "Premium Elementor Pro plugin",
-            "homepage": "https://github.com/colbycommunications/wp-plugin-elementor-pro",
+            "homepage": "https://github.com/colbycommunications/elementor-pro",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2022-02-15T15:10:07+00:00"
+            "time": "2022-04-18T14:24:32+00:00"
         },
         {
-            "name": "colbycommunications/wp-plugin-gravity-forms",
-            "version": "2.5.15.3",
+            "name": "colbycommunications/gravityforms",
+            "version": "2.5.15.13",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ColbyCommunications/wp-plugin-gravity-forms.git",
-                "reference": "2d27f18cc1b157a84adf5e5c1d47f7d7d26cb67d"
+                "url": "git@github.com:ColbyCommunications/gravityforms.git",
+                "reference": "5ddb13278d981cafcfc887b0e122c52307dd6d15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/wp-plugin-gravity-forms/colbycommunications-wp-plugin-gravity-forms-2d27f18cc1b157a84adf5e5c1d47f7d7d26cb67d-zip-001a3d.zip",
-                "reference": "2d27f18cc1b157a84adf5e5c1d47f7d7d26cb67d",
-                "shasum": "4d40720178de3e6d8cd1407968b46d5524daf396"
+                "url": "https://satis.colby.edu/dist/colbycommunications/gravityforms/colbycommunications-gravityforms-5ddb13278d981cafcfc887b0e122c52307dd6d15-zip-34a4a8.zip",
+                "reference": "5ddb13278d981cafcfc887b0e122c52307dd6d15",
+                "shasum": "09baceb098ed12ec5f374b67488970addaec8982"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -292,25 +292,25 @@
                 }
             ],
             "description": "Premium Gravity Forms plugin",
-            "homepage": "https://github.com/colbycommunications/wp-plugin-gravity-forms",
+            "homepage": "https://github.com/colbycommunications/gravityforms",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2022-02-14T19:58:33+00:00"
+            "time": "2022-04-18T15:02:37+00:00"
         },
         {
-            "name": "colbycommunications/wp-plugin-gravity-forms-constantcontact-pro",
+            "name": "colbycommunications/gravityformsconstantcontact",
             "version": "1.5",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ColbyCommunications/wp-plugin-gravity-forms-constantcontact-pro.git",
-                "reference": "dc1fc359c9ff3f44cef92c0fd59cb833b4af0b11"
+                "url": "git@github.com:ColbyCommunications/gravityformsconstantcontact.git",
+                "reference": "e4fa42e5c94820726220e431e5a52ec12fc97306"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/wp-plugin-gravity-forms-constantcontact-pro/colbycommunications-wp-plugin-gravity-forms-constantcontact-pro-dc1fc359c9ff3f44cef92c0fd59cb833b4af0b11-zip-f9cc8d.zip",
-                "reference": "dc1fc359c9ff3f44cef92c0fd59cb833b4af0b11",
-                "shasum": "15af4e4e3ae7fb5f397af354e8e702a65619bebf"
+                "url": "https://satis.colby.edu/dist/colbycommunications/gravityformsconstantcontact/colbycommunications-gravityformsconstantcontact-e4fa42e5c94820726220e431e5a52ec12fc97306-zip-624766.zip",
+                "reference": "e4fa42e5c94820726220e431e5a52ec12fc97306",
+                "shasum": "db3f42e07d742580ca15ad07f0c129b57fdc4f66"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -320,25 +320,25 @@
                 }
             ],
             "description": "Premium Constant Contact Add-on for Gravity Forms",
-            "homepage": "https://github.com/colbycommunications/wp-plugin-gravity-forms-constantcontact-pro",
+            "homepage": "https://github.com/colbycommunications/gravityformsconstantcontact",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2022-04-18T13:55:26+00:00"
+            "time": "2022-04-18T14:53:34+00:00"
         },
         {
-            "name": "colbycommunications/wp-plugin-jet-menu-pro",
+            "name": "colbycommunications/jet-menu",
             "version": "2.1.6",
             "source": {
                 "type": "git",
-                "url": "git@github.com:ColbyCommunications/wp-plugin-jet-menu-pro.git",
-                "reference": "8a0cf6c3423f4b9ed2b749a25678b18108d27682"
+                "url": "git@github.com:ColbyCommunications/jet-menu.git",
+                "reference": "1e794181466e1b421e9183402e978ca942cedc64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/wp-plugin-jet-menu-pro/colbycommunications-wp-plugin-jet-menu-pro-8a0cf6c3423f4b9ed2b749a25678b18108d27682-zip-f897db.zip",
-                "reference": "8a0cf6c3423f4b9ed2b749a25678b18108d27682",
-                "shasum": "b2630bc36d1e942d554cdce56aa393197a507730"
+                "url": "https://satis.colby.edu/dist/colbycommunications/jet-menu/colbycommunications-jet-menu-1e794181466e1b421e9183402e978ca942cedc64-zip-646337.zip",
+                "reference": "1e794181466e1b421e9183402e978ca942cedc64",
+                "shasum": "bebfa1fd73bf054644359564057b66c3215c9bf6"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -348,11 +348,11 @@
                 }
             ],
             "description": "Premium Crocoblock Jet Menu Pro plugin",
-            "homepage": "https://github.com/colbycommunications/wp-plugin-jet-menu-pro",
+            "homepage": "https://github.com/colbycommunications/jet-menu",
             "keywords": [
                 "wordpress"
             ],
-            "time": "2022-02-17T14:51:45+00:00"
+            "time": "2022-04-18T14:19:22+00:00"
         },
         {
             "name": "composer/installers",
