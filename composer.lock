@@ -174,7 +174,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/colby-ticket/colbycommunications-colby-ticket-4de4cbfcfa62f4ffc64273910244b4f53b04bc48-zip-e1cd7a.zip",
                 "reference": "4de4cbfcfa62f4ffc64273910244b4f53b04bc48",
-                "shasum": "74a16dbe900b77e8acc35e1144b4609ba98b5376"
+                "shasum": "4ba5d8f8fafc64fbad217c3867026f6684a22458"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -202,7 +202,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/elementor-pro/colbycommunications-elementor-pro-5d5ef9f064cc28c33af58cf9862d7b184a5b0e65-zip-66455b.zip",
                 "reference": "5d5ef9f064cc28c33af58cf9862d7b184a5b0e65",
-                "shasum": "533cb519d786c88ec5cdf20fb6574df906065860"
+                "shasum": "9eea192526a75d603ebcce4f1f0899e3144bb4ff"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -230,7 +230,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/gravityforms/colbycommunications-gravityforms-5ddb13278d981cafcfc887b0e122c52307dd6d15-zip-34a4a8.zip",
                 "reference": "5ddb13278d981cafcfc887b0e122c52307dd6d15",
-                "shasum": "0760f639c0721c73163ff389e2842a6fa57bef77"
+                "shasum": "40a31f42f85b7378f34ff272d013edc1af541e87"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -258,7 +258,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/gravityformsconstantcontact/colbycommunications-gravityformsconstantcontact-e4fa42e5c94820726220e431e5a52ec12fc97306-zip-624766.zip",
                 "reference": "e4fa42e5c94820726220e431e5a52ec12fc97306",
-                "shasum": "d2af6d378900232c474af7401c62510832885618"
+                "shasum": "7ba20c30f2c4a38385370613aa799d4e0b2d130e"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -286,7 +286,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/jet-menu/colbycommunications-jet-menu-1e794181466e1b421e9183402e978ca942cedc64-zip-646337.zip",
                 "reference": "1e794181466e1b421e9183402e978ca942cedc64",
-                "shasum": "f10ede35907c1bbfbc42fa52db263aa2da1671d1"
+                "shasum": "95bfbeb6f0827e2379e8c020c2b873cb6c45c2a4"
             },
             "type": "wordpress-plugin",
             "authors": [
