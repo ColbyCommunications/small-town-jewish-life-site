@@ -21,6 +21,12 @@
           to: "/wp/wp-admin/$1"
           regexp: true
 
+"https://{default}/_healthcheck":
+  type: upstream
+  upstream: "app:http"
+  cache:
+    enabled: false
+
 # *ALL* www.* requests should be redirected back to primary domain
 "https://www.{all}/":
     type: redirect
