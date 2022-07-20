@@ -4,54 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9aefcf3d2ba6195b69db8e3c5364cc30",
+    "content-hash": "fc7a872d2a669b05683a7852e0a88b4b",
     "packages": [
-        {
-            "name": "appsero/client",
-            "version": "v1.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Appsero/client.git",
-                "reference": "5c3fdc4945c8680bca6fb01eee1ec5dc4f22de87"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Appsero/client/zipball/5c3fdc4945c8680bca6fb01eee1ec5dc4f22de87",
-                "reference": "5c3fdc4945c8680bca6fb01eee1ec5dc4f22de87",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Appsero\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tareq Hasan",
-                    "email": "tareq@appsero.com"
-                }
-            ],
-            "description": "Appsero Client",
-            "keywords": [
-                "analytics",
-                "plugin",
-                "theme",
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/Appsero/client/issues",
-                "source": "https://github.com/Appsero/client/tree/v1.2.0"
-            },
-            "time": "2020-09-10T09:10:28+00:00"
-        },
         {
             "name": "brick/math",
             "version": "0.9.3",
@@ -124,7 +78,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/advanced-custom-fields-pro/colbycommunications-advanced-custom-fields-pro-48af38e1aae394e6f259c5a163723abf9f3afe5c-zip-156b29.zip",
                 "reference": "48af38e1aae394e6f259c5a163723abf9f3afe5c",
-                "shasum": "acff17e24af9db8fc0fce20a40bacf77c18f0e1c"
+                "shasum": "f347fbdc98e444cdcf955956cd65e7299ee08c5b"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -141,119 +95,12 @@
             "time": "2022-04-18T18:41:00+00:00"
         },
         {
-            "name": "colbycommunications/colby-base-theme",
-            "version": "dev-sage-10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ColbyCommunications/colby-base-theme",
-                "reference": "e56676cc4689fc1f874080455dbcbbf0a4d23e81"
-            },
-            "require": {
-                "php": "^7.4|^8.0",
-                "roots/acorn": "^2.0"
-            },
-            "require-dev": {
-                "squizlabs/php_codesniffer": "^3.6"
-            },
-            "suggest": {
-                "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0).",
-                "log1x/sage-svg": "A useful SVG directive for inlining SVG's within Blade views (^1.0)."
-            },
-            "type": "wordpress-theme",
-            "extra": {
-                "acorn": {
-                    "providers": [
-                        "App\\Providers\\ThemeServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "App\\": "app/"
-                }
-            },
-            "scripts": {
-                "lint": [
-                    "phpcs --extensions=php --standard=PSR12 app"
-                ]
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ben Word",
-                    "email": "ben@benword.com",
-                    "homepage": "https://github.com/retlehs"
-                },
-                {
-                    "name": "Scott Walkinshaw",
-                    "email": "scott.walkinshaw@gmail.com",
-                    "homepage": "https://github.com/swalkinshaw"
-                },
-                {
-                    "name": "QWp6t",
-                    "email": "hi@qwp6t.me",
-                    "homepage": "https://github.com/qwp6t"
-                },
-                {
-                    "name": "Brandon Nifong",
-                    "email": "brandon@tendency.me",
-                    "homepage": "https://github.com/log1x"
-                }
-            ],
-            "description": "WordPress starter theme with a modern development workflow",
-            "homepage": "https://roots.io/sage/",
-            "keywords": [
-                "wordpress"
-            ],
-            "support": {
-                "issues": "https://github.com/roots/sage/issues",
-                "forum": "https://discourse.roots.io/"
-            },
-            "time": "2022-05-26T17:47:27+00:00"
-        },
-        {
-            "name": "colbycommunications/colby-groups",
-            "version": "dev-wp4-test",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ColbyCommunications/colby-groups",
-                "reference": "65a6e26b6a1ad68d298b9e1d089cb324a03fc704"
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "automattic/vipwpcs": "^2.0",
-                "dealerdirect/phpcodesniffer-composer-installer": "*",
-                "phpunit/phpunit": "^6.5",
-                "wp-coding-standards/wpcs": "^2.1"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Keith McGlauflin",
-                    "email": "keith.mcglauflin@colby.edu"
-                },
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Colby user group management plugin",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2020-02-12T18:47:50+00:00"
-        },
-        {
             "name": "colbycommunications/colby-small-town-jewish-life-theme",
-            "version": "dev-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "c687772223af2c5cafb1771141931b80c248192d"
+                "reference": "9d3de1fd0a8a81033f7700e9d2dc8d2c567f3115"
             },
             "require": {
                 "php": "^7.4|^8.0",
@@ -266,6 +113,7 @@
                 "log1x/sage-directives": "A collection of useful Blade directives for WordPress and Sage (^1.0).",
                 "log1x/sage-svg": "A useful SVG directive for inlining SVG's within Blade views (^1.0)."
             },
+            "default-branch": true,
             "type": "wordpress-theme",
             "extra": {
                 "acorn": {
@@ -318,7 +166,7 @@
                 "issues": "https://github.com/roots/sage/issues",
                 "forum": "https://discourse.roots.io/"
             },
-            "time": "2022-07-11T17:46:21+00:00"
+            "time": "2022-06-22T15:10:27+00:00"
         },
         {
             "name": "colbycommunications/colby-ticket",
@@ -332,7 +180,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/colby-ticket/colbycommunications-colby-ticket-48a50e77d781470f2ba01426f64dec1ce6e1d53b-zip-2804bc.zip",
                 "reference": "48a50e77d781470f2ba01426f64dec1ce6e1d53b",
-                "shasum": "6d959a72f23075019a5dbe42574e69b388ac28fb"
+                "shasum": "530ec1450b47a07402403a30e9740e54dbb825e8"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -360,7 +208,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/elementor-pro/colbycommunications-elementor-pro-5d5ef9f064cc28c33af58cf9862d7b184a5b0e65-zip-66455b.zip",
                 "reference": "5d5ef9f064cc28c33af58cf9862d7b184a5b0e65",
-                "shasum": "082f90af033f975d89b2162fede7571fec3f940e"
+                "shasum": "6356137001153eca595bfce4dce9aed27b2d909b"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -388,7 +236,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/gravityforms/colbycommunications-gravityforms-5ddb13278d981cafcfc887b0e122c52307dd6d15-zip-34a4a8.zip",
                 "reference": "5ddb13278d981cafcfc887b0e122c52307dd6d15",
-                "shasum": "43fc4ae45cab24505f343cd2d8e176c83d015fc8"
+                "shasum": "0e7be17845d40f82fecaada587c4b2337487b22e"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -416,7 +264,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/gravityformsconstantcontact/colbycommunications-gravityformsconstantcontact-e4fa42e5c94820726220e431e5a52ec12fc97306-zip-624766.zip",
                 "reference": "e4fa42e5c94820726220e431e5a52ec12fc97306",
-                "shasum": "8ebdebfca8f0420d3c1d7b6944f658e1968ec6ff"
+                "shasum": "ff29b322c3b4a1afb18e68dfea6e8f2b5cd38c58"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -433,118 +281,6 @@
             "time": "2022-04-18T14:53:34+00:00"
         },
         {
-            "name": "colbycommunications/jet-blocks",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-blocks.git",
-                "reference": "ab4449ac82ef713d18930be25abc012bde9f1a9a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-blocks/colbycommunications-jet-blocks-ab4449ac82ef713d18930be25abc012bde9f1a9a-zip-c97ae1.zip",
-                "reference": "ab4449ac82ef713d18930be25abc012bde9f1a9a",
-                "shasum": "2fe14ca13948e8f22a5bf78166e818c1d796a240"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Blocks Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-blocks",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T20:44:13+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-blog",
-            "version": "2.2.15",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-blog.git",
-                "reference": "b490b6f26e9a9cb999cce1017e47aa5d5562b40c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-blog/colbycommunications-jet-blog-b490b6f26e9a9cb999cce1017e47aa5d5562b40c-zip-276579.zip",
-                "reference": "b490b6f26e9a9cb999cce1017e47aa5d5562b40c",
-                "shasum": "1c72fba3a56905c19da3c30fabc3851929ee2b30"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Blog Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-blog",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-19T13:59:35+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-elements",
-            "version": "2.6.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-elements.git",
-                "reference": "aa2425d9eeda1b47acb6cf626358da2666adb18a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-elements/colbycommunications-jet-elements-aa2425d9eeda1b47acb6cf626358da2666adb18a-zip-8c06be.zip",
-                "reference": "aa2425d9eeda1b47acb6cf626358da2666adb18a",
-                "shasum": "669406f99b708adbeb6eb3ef3772f37ee1055d2c"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Elements Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-elements",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T20:36:35+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-elements-dynamic-data",
-            "version": "1.3.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-elements-dynamic-data.git",
-                "reference": "7f4ff5287b73e8373eebfc7a394fb319926d86ed"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-elements-dynamic-data/colbycommunications-jet-elements-dynamic-data-7f4ff5287b73e8373eebfc7a394fb319926d86ed-zip-cb557b.zip",
-                "reference": "7f4ff5287b73e8373eebfc7a394fb319926d86ed",
-                "shasum": "4f95500dca4db51a314d3985919404090f93ebd8"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Dynamic Data Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-elements-dynamic-data",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T18:53:02+00:00"
-        },
-        {
             "name": "colbycommunications/jet-menu",
             "version": "2.1.6",
             "source": {
@@ -556,7 +292,7 @@
                 "type": "zip",
                 "url": "https://satis.colby.edu/dist/colbycommunications/jet-menu/colbycommunications-jet-menu-1e794181466e1b421e9183402e978ca942cedc64-zip-646337.zip",
                 "reference": "1e794181466e1b421e9183402e978ca942cedc64",
-                "shasum": "3a6be414430b38e417be040ddf3869d7295c83eb"
+                "shasum": "021229861834121eefc9cd2b6aac9be71264cb06"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -573,213 +309,17 @@
             "time": "2022-04-18T14:19:22+00:00"
         },
         {
-            "name": "colbycommunications/jet-popup",
-            "version": "1.5.6",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-popup.git",
-                "reference": "c0b82037f6bf17926461ee5d1735f6654c2552b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-popup/colbycommunications-jet-popup-c0b82037f6bf17926461ee5d1735f6654c2552b0-zip-914dcb.zip",
-                "reference": "c0b82037f6bf17926461ee5d1735f6654c2552b0",
-                "shasum": "884379c499ab987e731e35c21e45343f0122dd46"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Popup Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-popup",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-19T17:46:59+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-reviews",
-            "version": "2.2.6",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-reviews.git",
-                "reference": "71745284f46fae9ef24ef14a97a8aa5f14a72036"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-reviews/colbycommunications-jet-reviews-71745284f46fae9ef24ef14a97a8aa5f14a72036-zip-f2d15c.zip",
-                "reference": "71745284f46fae9ef24ef14a97a8aa5f14a72036",
-                "shasum": "208edc99e479bf9730a55966eaa3ceb6d6adced1"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Reviews Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-reviews",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T18:59:29+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-search",
-            "version": "2.1.17",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-search.git",
-                "reference": "ca0178039b1a81a21e90ddd6d7c1464be41e04bc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-search/colbycommunications-jet-search-ca0178039b1a81a21e90ddd6d7c1464be41e04bc-zip-73d3cf.zip",
-                "reference": "ca0178039b1a81a21e90ddd6d7c1464be41e04bc",
-                "shasum": "0387a1f6623f3d0573575c71f969ccdb0d919b68"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Search Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-search",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-19T18:02:00+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-style-manager",
-            "version": "1.3.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-style-manager.git",
-                "reference": "5e583a191d4d992413367bfe01457ffa6c15802d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-style-manager/colbycommunications-jet-style-manager-5e583a191d4d992413367bfe01457ffa6c15802d-zip-c194ce.zip",
-                "reference": "5e583a191d4d992413367bfe01457ffa6c15802d",
-                "shasum": "6a3ecb732e179dd54b75e2e87ca30738a43c2018"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Style Manager Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-style-manager",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T20:30:17+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-tabs",
-            "version": "2.1.15",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-tabs.git",
-                "reference": "83326fc7d8b4fb53b735c57635e8b045f8a661f9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-tabs/colbycommunications-jet-tabs-83326fc7d8b4fb53b735c57635e8b045f8a661f9-zip-dd3308.zip",
-                "reference": "83326fc7d8b4fb53b735c57635e8b045f8a661f9",
-                "shasum": "44b1181a9394bea410cd236eb590b90a47933843"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Tabs Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-tabs",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T18:46:21+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-theme-core",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-theme-core.git",
-                "reference": "df1f8533643e1409817bbba3379842bbfded8103"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-theme-core/colbycommunications-jet-theme-core-df1f8533643e1409817bbba3379842bbfded8103-zip-512779.zip",
-                "reference": "df1f8533643e1409817bbba3379842bbfded8103",
-                "shasum": "6b051da670f76fc0cc0e69e5cb37f9a31bd7176b"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Theme Core Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-theme-core",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-18T19:05:18+00:00"
-        },
-        {
-            "name": "colbycommunications/jet-tricks",
-            "version": "1.4.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:ColbyCommunications/jet-tricks.git",
-                "reference": "32939742e9978251eee477d03daa506f42424f60"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/jet-tricks/colbycommunications-jet-tricks-32939742e9978251eee477d03daa506f42424f60-zip-fdff8b.zip",
-                "reference": "32939742e9978251eee477d03daa506f42424f60",
-                "shasum": "64cfcebf4bf50c460caf0fba48308976d913f55e"
-            },
-            "type": "wordpress-plugin",
-            "authors": [
-                {
-                    "name": "Brandon Waltz",
-                    "email": "brandon.waltz@colby.edu"
-                }
-            ],
-            "description": "Premium Crocoblock Jet Tricks Pro plugin",
-            "homepage": "https://github.com/colbycommunications/jet-tricks",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2022-04-19T17:57:09+00:00"
-        },
-        {
             "name": "composer/ca-bundle",
-            "version": "1.3.2",
+            "version": "1.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
-                "reference": "fd5dd441932a7e10ca6e5b490e272d34c8430640"
+                "reference": "30897edbfb15e784fe55587b4f73ceefd3c4d98c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/fd5dd441932a7e10ca6e5b490e272d34c8430640",
-                "reference": "fd5dd441932a7e10ca6e5b490e272d34c8430640",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/30897edbfb15e784fe55587b4f73ceefd3c4d98c",
+                "reference": "30897edbfb15e784fe55587b4f73ceefd3c4d98c",
                 "shasum": ""
             },
             "require": {
@@ -826,7 +366,7 @@
             "support": {
                 "irc": "irc://irc.freenode.org/composer",
                 "issues": "https://github.com/composer/ca-bundle/issues",
-                "source": "https://github.com/composer/ca-bundle/tree/1.3.2"
+                "source": "https://github.com/composer/ca-bundle/tree/1.3.3"
             },
             "funding": [
                 {
@@ -842,20 +382,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-05-24T11:56:16+00:00"
+            "time": "2022-07-20T07:14:26+00:00"
         },
         {
             "name": "composer/composer",
-            "version": "2.3.9",
+            "version": "2.3.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/composer.git",
-                "reference": "015f524c9969255a29cdea8890cbd4fec240ee47"
+                "reference": "ebac357c0a41359f3981098729042ed6dedc97ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/015f524c9969255a29cdea8890cbd4fec240ee47",
-                "reference": "015f524c9969255a29cdea8890cbd4fec240ee47",
+                "url": "https://api.github.com/repos/composer/composer/zipball/ebac357c0a41359f3981098729042ed6dedc97ba",
+                "reference": "ebac357c0a41359f3981098729042ed6dedc97ba",
                 "shasum": ""
             },
             "require": {
@@ -936,7 +476,7 @@
             "support": {
                 "irc": "ircs://irc.libera.chat:6697/composer",
                 "issues": "https://github.com/composer/composer/issues",
-                "source": "https://github.com/composer/composer/tree/2.3.9"
+                "source": "https://github.com/composer/composer/tree/2.3.10"
             },
             "funding": [
                 {
@@ -952,7 +492,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-07-05T14:52:11+00:00"
+            "time": "2022-07-13T13:48:23+00:00"
         },
         {
             "name": "composer/installers",
@@ -1833,7 +1373,7 @@
         },
         {
             "name": "illuminate/bus",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -1886,7 +1426,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -1946,7 +1486,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -2000,7 +1540,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -2048,7 +1588,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -2108,7 +1648,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -2159,7 +1699,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -2207,7 +1747,7 @@
         },
         {
             "name": "illuminate/events",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -2262,7 +1802,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -2324,7 +1864,7 @@
         },
         {
             "name": "illuminate/http",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
@@ -2382,7 +1922,7 @@
         },
         {
             "name": "illuminate/log",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/log.git",
@@ -2431,7 +1971,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -2477,7 +2017,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -2525,7 +2065,7 @@
         },
         {
             "name": "illuminate/session",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -2581,7 +2121,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -2649,7 +2189,7 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v8.83.18",
+            "version": "v8.83.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -2702,62 +2242,17 @@
             "time": "2022-04-14T13:47:10+00:00"
         },
         {
-            "name": "ivome/graphql-relay-php",
-            "version": "v0.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/ivome/graphql-relay-php.git",
-                "reference": "7055fd45b7e552cee4d1290849b84294b0049373"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/ivome/graphql-relay-php/zipball/7055fd45b7e552cee4d1290849b84294b0049373",
-                "reference": "7055fd45b7e552cee4d1290849b84294b0049373",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0",
-                "webonyx/graphql-php": "^14.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.5",
-                "satooshi/php-coveralls": "~1.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "description": "A PHP port of GraphQL Relay reference implementation",
-            "homepage": "https://github.com/ivome/graphql-relay-php",
-            "keywords": [
-                "Relay",
-                "api",
-                "graphql"
-            ],
-            "support": {
-                "issues": "https://github.com/ivome/graphql-relay-php/issues",
-                "source": "https://github.com/ivome/graphql-relay-php/tree/v0.6.0"
-            },
-            "time": "2021-04-24T19:31:29+00:00"
-        },
-        {
             "name": "johnpbloch/wordpress-core",
-            "version": "6.0.0",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "90d8de3a682f2ed93ebe8cf99bec8fb297d43967"
+                "reference": "163eec26760f7d2cac040e04f00ce548cd303eb1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/90d8de3a682f2ed93ebe8cf99bec8fb297d43967",
-                "reference": "90d8de3a682f2ed93ebe8cf99bec8fb297d43967",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/163eec26760f7d2cac040e04f00ce548cd303eb1",
+                "reference": "163eec26760f7d2cac040e04f00ce548cd303eb1",
                 "shasum": ""
             },
             "require": {
@@ -2765,7 +2260,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "6.0.0"
+                "wordpress/core-implementation": "6.0.1"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2792,7 +2287,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2022-05-24T19:10:11+00:00"
+            "time": "2022-07-12T16:22:00+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -3476,73 +2971,6 @@
             "time": "2022-05-31T20:59:12+00:00"
         },
         {
-            "name": "opis/json-schema",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/opis/json-schema.git",
-                "reference": "39d8072be8657a329a284339994401066406c43b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/opis/json-schema/zipball/39d8072be8657a329a284339994401066406c43b",
-                "reference": "39d8072be8657a329a284339994401066406c43b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "require-dev": {
-                "ext-bcmath": "*",
-                "ext-intl": "*",
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "opis/string": "^1.4",
-                "phpunit/phpunit": "^6.5 || ^7.0 || ^9.4"
-            },
-            "suggest": {
-                "opis/string": "A standalone library for manipulating multibyte strings"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Opis\\JsonSchema\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Sorin Sarca",
-                    "email": "sarca_sorin@hotmail.com"
-                },
-                {
-                    "name": "Marius Sarca",
-                    "email": "marius.sarca@gmail.com"
-                }
-            ],
-            "description": "Json Schema Validator",
-            "homepage": "http://www.opis.io/json-schema",
-            "keywords": [
-                "json",
-                "schema",
-                "validation",
-                "validator"
-            ],
-            "support": {
-                "issues": "https://github.com/opis/json-schema/issues",
-                "source": "https://github.com/opis/json-schema/tree/1.1.0"
-            },
-            "time": "2021-04-14T20:02:50+00:00"
-        },
-        {
             "name": "phpoption/phpoption",
             "version": "1.8.1",
             "source": {
@@ -3612,47 +3040,6 @@
                 }
             ],
             "time": "2021-12-04T23:24:31+00:00"
-        },
-        {
-            "name": "pristas-peter/wp-graphql-gutenberg",
-            "version": "v0.3.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pristas-peter/wp-graphql-gutenberg.git",
-                "reference": "93ea1aaf7e24ca09e79d7a34dcabea9797a1f3ea"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pristas-peter/wp-graphql-gutenberg/zipball/93ea1aaf7e24ca09e79d7a34dcabea9797a1f3ea",
-                "reference": "93ea1aaf7e24ca09e79d7a34dcabea9797a1f3ea",
-                "shasum": ""
-            },
-            "require": {
-                "opis/json-schema": "^1.0",
-                "voku/simple_html_dom": "4.7.17"
-            },
-            "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "0.5.0",
-                "phpcompatibility/phpcompatibility-wp": "2.1.0",
-                "squizlabs/php_codesniffer": "3.5.4",
-                "wp-coding-standards/wpcs": "2.1.1"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "psr-4": {
-                    "WPGraphqlGutenberg\\": "src/"
-                },
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Query gutenberg blocks with wp-graphql",
-            "support": {
-                "issues": "https://github.com/pristas-peter/wp-graphql-gutenberg/issues",
-                "source": "https://github.com/pristas-peter/wp-graphql-gutenberg/tree/v0.3.12"
-            },
-            "time": "2022-05-18T17:14:57+00:00"
         },
         {
             "name": "psr/container",
@@ -4239,16 +3626,16 @@
         },
         {
             "name": "roots/acorn",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/roots/acorn.git",
-                "reference": "0d68d0fbd2d61a3141d277ef588bd53c7a2cf5e0"
+                "reference": "82649f7b8b4916da7fb63b202b4e3c8024178dbd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/roots/acorn/zipball/0d68d0fbd2d61a3141d277ef588bd53c7a2cf5e0",
-                "reference": "0d68d0fbd2d61a3141d277ef588bd53c7a2cf5e0",
+                "url": "https://api.github.com/repos/roots/acorn/zipball/82649f7b8b4916da7fb63b202b4e3c8024178dbd",
+                "reference": "82649f7b8b4916da7fb63b202b4e3c8024178dbd",
                 "shasum": ""
             },
             "require": {
@@ -4323,7 +3710,7 @@
             "support": {
                 "forum": "https://discourse.roots.io/",
                 "issues": "https://github.com/roots/acorn/issues",
-                "source": "https://github.com/roots/acorn/tree/v2.1.1"
+                "source": "https://github.com/roots/acorn/tree/v2.1.2"
             },
             "funding": [
                 {
@@ -4335,7 +3722,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-07-10T17:51:21+00:00"
+            "time": "2022-07-17T19:11:26+00:00"
         },
         {
             "name": "roots/support",
@@ -4592,72 +3979,6 @@
                 }
             ],
             "time": "2022-06-26T13:00:04+00:00"
-        },
-        {
-            "name": "symfony/css-selector",
-            "version": "v5.4.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/css-selector.git",
-                "reference": "b0a190285cd95cb019237851205b8140ef6e368e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/b0a190285cd95cb019237851205b8140ef6e368e",
-                "reference": "b0a190285cd95cb019237851205b8140ef6e368e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.5",
-                "symfony/polyfill-php80": "^1.16"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\CssSelector\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Jean-François Simon",
-                    "email": "jeanfrancois.simon@sensiolabs.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Converts CSS selectors to XPath expressions",
-            "homepage": "https://symfony.com",
-            "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v5.4.3"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2022-01-02T09:53:40+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -6734,153 +6055,6 @@
             "time": "2022-01-24T18:55:24+00:00"
         },
         {
-            "name": "voku/simple_html_dom",
-            "version": "4.7.17",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "804aca422f1fe0104b1320ca09fd06cd0062782c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/804aca422f1fe0104b1320ca09fd06cd0062782c",
-                "reference": "804aca422f1fe0104b1320ca09fd06cd0062782c",
-                "shasum": ""
-            },
-            "require": {
-                "ext-dom": "*",
-                "ext-libxml": "*",
-                "ext-simplexml": "*",
-                "php": ">=7.0.0",
-                "symfony/css-selector": "~3.0 || ~4.0 || ~5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~6.0 || ~7.0"
-            },
-            "suggest": {
-                "voku/portable-utf8": "If you need e.g. UTF-8 fixed output."
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "voku\\helper\\": "src/voku/helper/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "dimabdc",
-                    "email": "support@titor.ru",
-                    "homepage": "http://github.com/dimabdc",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Lars Moelleken",
-                    "homepage": "http://www.moelleken.org/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Simple HTML DOM package.",
-            "homepage": "http://simplehtmldom.sourceforge.net/",
-            "keywords": [
-                "HTML Parser",
-                "dom",
-                "php dom"
-            ],
-            "support": {
-                "issues": "https://github.com/voku/simple_html_dom/issues",
-                "source": "https://github.com/voku/simple_html_dom/tree/4.7.17"
-            },
-            "funding": [
-                {
-                    "url": "https://www.paypal.me/moelleken",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/voku",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/voku",
-                    "type": "patreon"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/voku/simple_html_dom",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2020-04-09T21:20:43+00:00"
-        },
-        {
-            "name": "webonyx/graphql-php",
-            "version": "v14.9.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webonyx/graphql-php.git",
-                "reference": "36b83621deb5eae354347a2e86dc7aec81b32a82"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webonyx/graphql-php/zipball/36b83621deb5eae354347a2e86dc7aec81b32a82",
-                "reference": "36b83621deb5eae354347a2e86dc7aec81b32a82",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ext-mbstring": "*",
-                "php": "^7.1||^8.0"
-            },
-            "require-dev": {
-                "amphp/amp": "^2.3",
-                "doctrine/coding-standard": "^6.0",
-                "nyholm/psr7": "^1.2",
-                "phpbench/phpbench": "^0.16.10",
-                "phpstan/extension-installer": "^1.0",
-                "phpstan/phpstan": "0.12.82",
-                "phpstan/phpstan-phpunit": "0.12.18",
-                "phpstan/phpstan-strict-rules": "0.12.9",
-                "phpunit/phpunit": "^7.2|^8.5",
-                "psr/http-message": "^1.0",
-                "react/promise": "2.*",
-                "simpod/php-coveralls-mirror": "^3.0",
-                "squizlabs/php_codesniffer": "3.5.4"
-            },
-            "suggest": {
-                "psr/http-message": "To use standard GraphQL server",
-                "react/promise": "To leverage async resolving on React PHP platform"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "GraphQL\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "A PHP port of GraphQL reference implementation",
-            "homepage": "https://github.com/webonyx/graphql-php",
-            "keywords": [
-                "api",
-                "graphql"
-            ],
-            "support": {
-                "issues": "https://github.com/webonyx/graphql-php/issues",
-                "source": "https://github.com/webonyx/graphql-php/tree/v14.9.0"
-            },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/webonyx-graphql-php",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2021-06-15T16:14:17+00:00"
-        },
-        {
             "name": "wp-cli/cache-command",
             "version": "v2.0.9",
             "source": {
@@ -7087,16 +6261,16 @@
         },
         {
             "name": "wp-cli/core-command",
-            "version": "v2.1.1",
+            "version": "v2.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/core-command.git",
-                "reference": "a75d052ea000b4f0ec14106c110836b376e95a4f"
+                "reference": "f5fe574c1247b4e9ba50686bbce3b87b67579ad0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/a75d052ea000b4f0ec14106c110836b376e95a4f",
-                "reference": "a75d052ea000b4f0ec14106c110836b376e95a4f",
+                "url": "https://api.github.com/repos/wp-cli/core-command/zipball/f5fe574c1247b4e9ba50686bbce3b87b67579ad0",
+                "reference": "f5fe574c1247b4e9ba50686bbce3b87b67579ad0",
                 "shasum": ""
             },
             "require": {
@@ -7152,9 +6326,9 @@
             "homepage": "https://github.com/wp-cli/core-command",
             "support": {
                 "issues": "https://github.com/wp-cli/core-command/issues",
-                "source": "https://github.com/wp-cli/core-command/tree/v2.1.1"
+                "source": "https://github.com/wp-cli/core-command/tree/v2.1.2"
             },
-            "time": "2022-01-21T21:29:11+00:00"
+            "time": "2022-07-05T22:15:28+00:00"
         },
         {
             "name": "wp-cli/cron-command",
@@ -7226,16 +6400,16 @@
         },
         {
             "name": "wp-cli/db-command",
-            "version": "v2.0.20",
+            "version": "v2.0.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/db-command.git",
-                "reference": "709f58c30d178afcdecaf56068ca9f5e985ed6b9"
+                "reference": "de9c4914173840edc02aea1ffa66db8c0e7f80a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/709f58c30d178afcdecaf56068ca9f5e985ed6b9",
-                "reference": "709f58c30d178afcdecaf56068ca9f5e985ed6b9",
+                "url": "https://api.github.com/repos/wp-cli/db-command/zipball/de9c4914173840edc02aea1ffa66db8c0e7f80a0",
+                "reference": "de9c4914173840edc02aea1ffa66db8c0e7f80a0",
                 "shasum": ""
             },
             "require": {
@@ -7294,9 +6468,9 @@
             "homepage": "https://github.com/wp-cli/db-command",
             "support": {
                 "issues": "https://github.com/wp-cli/db-command/issues",
-                "source": "https://github.com/wp-cli/db-command/tree/v2.0.20"
+                "source": "https://github.com/wp-cli/db-command/tree/v2.0.21"
             },
-            "time": "2022-01-25T03:11:39+00:00"
+            "time": "2022-07-14T14:19:05+00:00"
         },
         {
             "name": "wp-cli/embed-command",
@@ -7636,16 +6810,16 @@
         },
         {
             "name": "wp-cli/export-command",
-            "version": "v2.0.11",
+            "version": "v2.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/export-command.git",
-                "reference": "8dd137e0c739a59bb3d3de684a219dbb34473e11"
+                "reference": "fc647a75896efe9e4485e37aa9a03d430ff25532"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/8dd137e0c739a59bb3d3de684a219dbb34473e11",
-                "reference": "8dd137e0c739a59bb3d3de684a219dbb34473e11",
+                "url": "https://api.github.com/repos/wp-cli/export-command/zipball/fc647a75896efe9e4485e37aa9a03d430ff25532",
+                "reference": "fc647a75896efe9e4485e37aa9a03d430ff25532",
                 "shasum": ""
             },
             "require": {
@@ -7693,22 +6867,22 @@
             "homepage": "https://github.com/wp-cli/export-command",
             "support": {
                 "issues": "https://github.com/wp-cli/export-command/issues",
-                "source": "https://github.com/wp-cli/export-command/tree/v2.0.11"
+                "source": "https://github.com/wp-cli/export-command/tree/v2.0.12"
             },
-            "time": "2021-12-13T16:02:15+00:00"
+            "time": "2022-07-14T16:14:28+00:00"
         },
         {
             "name": "wp-cli/extension-command",
-            "version": "v2.1.4",
+            "version": "v2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/extension-command.git",
-                "reference": "6401d7ea51084fac40010c2fb305be640675f385"
+                "reference": "362a142a5ffc8a1f01a6a81cdfa6e70114342f77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/6401d7ea51084fac40010c2fb305be640675f385",
-                "reference": "6401d7ea51084fac40010c2fb305be640675f385",
+                "url": "https://api.github.com/repos/wp-cli/extension-command/zipball/362a142a5ffc8a1f01a6a81cdfa6e70114342f77",
+                "reference": "362a142a5ffc8a1f01a6a81cdfa6e70114342f77",
                 "shasum": ""
             },
             "require": {
@@ -7790,22 +6964,22 @@
             "homepage": "https://github.com/wp-cli/extension-command",
             "support": {
                 "issues": "https://github.com/wp-cli/extension-command/issues",
-                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.4"
+                "source": "https://github.com/wp-cli/extension-command/tree/v2.1.5"
             },
-            "time": "2022-01-25T02:07:46+00:00"
+            "time": "2022-07-11T11:32:13+00:00"
         },
         {
             "name": "wp-cli/i18n-command",
-            "version": "v2.3.0",
+            "version": "v2.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/i18n-command.git",
-                "reference": "bcb1a8159679cafdf1da884dbe5830122bae2c4d"
+                "reference": "45bc2b47a4ed103b871cd2ec5b483ab55ad12d99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/bcb1a8159679cafdf1da884dbe5830122bae2c4d",
-                "reference": "bcb1a8159679cafdf1da884dbe5830122bae2c4d",
+                "url": "https://api.github.com/repos/wp-cli/i18n-command/zipball/45bc2b47a4ed103b871cd2ec5b483ab55ad12d99",
+                "reference": "45bc2b47a4ed103b871cd2ec5b483ab55ad12d99",
                 "shasum": ""
             },
             "require": {
@@ -7819,6 +6993,7 @@
                 "wp-cli/wp-cli-tests": "^3.1"
             },
             "suggest": {
+                "ext-json": "Used for reading and generating JSON translation files",
                 "ext-mbstring": "Used for calculating include/exclude matches in code extraction"
             },
             "type": "wp-cli-package",
@@ -7830,7 +7005,9 @@
                 "commands": [
                     "i18n",
                     "i18n make-pot",
-                    "i18n make-json"
+                    "i18n make-json",
+                    "i18n make-mo",
+                    "i18n update-po"
                 ]
             },
             "autoload": {
@@ -7855,9 +7032,9 @@
             "homepage": "https://github.com/wp-cli/i18n-command",
             "support": {
                 "issues": "https://github.com/wp-cli/i18n-command/issues",
-                "source": "https://github.com/wp-cli/i18n-command/tree/v2.3.0"
+                "source": "https://github.com/wp-cli/i18n-command/tree/v2.4.0"
             },
-            "time": "2022-04-06T15:32:48+00:00"
+            "time": "2022-07-04T21:43:20+00:00"
         },
         {
             "name": "wp-cli/import-command",
@@ -8061,16 +7238,16 @@
         },
         {
             "name": "wp-cli/media-command",
-            "version": "v2.0.12",
+            "version": "v2.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/media-command.git",
-                "reference": "7cbf32c7fa68631619f85a9bea0fb80fca119ba6"
+                "reference": "bc4eca7a9b9a30663c5a8c8ed14708ccef4c0988"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/7cbf32c7fa68631619f85a9bea0fb80fca119ba6",
-                "reference": "7cbf32c7fa68631619f85a9bea0fb80fca119ba6",
+                "url": "https://api.github.com/repos/wp-cli/media-command/zipball/bc4eca7a9b9a30663c5a8c8ed14708ccef4c0988",
+                "reference": "bc4eca7a9b9a30663c5a8c8ed14708ccef4c0988",
                 "shasum": ""
             },
             "require": {
@@ -8117,9 +7294,9 @@
             "homepage": "https://github.com/wp-cli/media-command",
             "support": {
                 "issues": "https://github.com/wp-cli/media-command/issues",
-                "source": "https://github.com/wp-cli/media-command/tree/v2.0.12"
+                "source": "https://github.com/wp-cli/media-command/tree/v2.0.14"
             },
-            "time": "2021-12-06T16:13:51+00:00"
+            "time": "2022-07-14T16:16:59+00:00"
         },
         {
             "name": "wp-cli/mustangostang-spyc",
@@ -8239,16 +7416,16 @@
         },
         {
             "name": "wp-cli/php-cli-tools",
-            "version": "v0.11.13",
+            "version": "v0.11.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/php-cli-tools.git",
-                "reference": "a2866855ac1abc53005c102e901553ad5772dc04"
+                "reference": "f8f340e4a87687549d046e2da516242f7f36c934"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/a2866855ac1abc53005c102e901553ad5772dc04",
-                "reference": "a2866855ac1abc53005c102e901553ad5772dc04",
+                "url": "https://api.github.com/repos/wp-cli/php-cli-tools/zipball/f8f340e4a87687549d046e2da516242f7f36c934",
+                "reference": "f8f340e4a87687549d046e2da516242f7f36c934",
                 "shasum": ""
             },
             "require": {
@@ -8287,9 +7464,9 @@
             ],
             "support": {
                 "issues": "https://github.com/wp-cli/php-cli-tools/issues",
-                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.11.13"
+                "source": "https://github.com/wp-cli/php-cli-tools/tree/v0.11.14"
             },
-            "time": "2021-07-01T15:08:16+00:00"
+            "time": "2022-07-04T21:44:34+00:00"
         },
         {
             "name": "wp-cli/rewrite-command",
@@ -8977,121 +8154,6 @@
             "time": "2022-01-10T18:37:52+00:00"
         },
         {
-            "name": "wp-graphql/wp-graphiql",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-graphql/wp-graphiql.git",
-                "reference": "543617f1b257cd9bbc0682628bb32bd1e60cd959"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphiql/zipball/543617f1b257cd9bbc0682628bb32bd1e60cd959",
-                "reference": "543617f1b257cd9bbc0682628bb32bd1e60cd959",
-                "shasum": ""
-            },
-            "type": "wordpress-plugin",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Jason Bahl",
-                    "email": "jasonbahl@mac.com"
-                }
-            ],
-            "description": "GraphiQL IDE in the WP-Admin. Works with the WPGraphQL plugin. https://github.com/wp-graphql/wp-graphql",
-            "support": {
-                "issues": "https://github.com/wp-graphql/wp-graphiql/issues",
-                "source": "https://github.com/wp-graphql/wp-graphiql/tree/v1.0.1"
-            },
-            "abandoned": true,
-            "time": "2019-10-23T22:33:08+00:00"
-        },
-        {
-            "name": "wp-graphql/wp-graphql",
-            "version": "v1.8.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wp-graphql/wp-graphql.git",
-                "reference": "274bcf41e989d4b7c04d3a30fa0e7217522d99b4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wp-graphql/wp-graphql/zipball/274bcf41e989d4b7c04d3a30fa0e7217522d99b4",
-                "reference": "274bcf41e989d4b7c04d3a30fa0e7217522d99b4",
-                "shasum": ""
-            },
-            "require": {
-                "appsero/client": "^1.2",
-                "ivome/graphql-relay-php": "0.6.0",
-                "php": "^7.1 || ^8.0",
-                "webonyx/graphql-php": "14.9.0"
-            },
-            "require-dev": {
-                "automattic/vipwpcs": "^2.2",
-                "codeception/module-asserts": "^1.0",
-                "codeception/module-cli": "^1.0",
-                "codeception/module-db": "^1.0",
-                "codeception/module-filesystem": "^1.0",
-                "codeception/module-phpbrowser": "^1.0",
-                "codeception/module-rest": "^1.2",
-                "codeception/module-webdriver": "^1.0",
-                "codeception/util-universalframework": "^1.0",
-                "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2",
-                "lucatume/wp-browser": "3.1.0",
-                "phpcompatibility/phpcompatibility-wp": "^2.1",
-                "phpstan/extension-installer": "^1.1",
-                "phpstan/phpstan": "^1.7",
-                "phpunit/phpunit": "^9.5",
-                "simpod/php-coveralls-mirror": "^3.0",
-                "squizlabs/php_codesniffer": "^3.5.7",
-                "szepeviktor/phpstan-wordpress": "1.1.1",
-                "wp-coding-standards/wpcs": "^2.3",
-                "wp-graphql/wp-graphql-testcase": "~2.3"
-            },
-            "type": "wordpress-plugin",
-            "autoload": {
-                "files": [
-                    "access-functions.php",
-                    "activation.php",
-                    "deactivation.php"
-                ],
-                "psr-4": {
-                    "WPGraphQL\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "Jason Bahl",
-                    "email": "jasonbahl@mac.com"
-                },
-                {
-                    "name": "Edwin Cromley"
-                },
-                {
-                    "name": "Ryan Kanner"
-                },
-                {
-                    "name": "Hughie Devore"
-                },
-                {
-                    "name": "Chris Zarate"
-                }
-            ],
-            "description": "GraphQL API for WordPress",
-            "support": {
-                "issues": "https://github.com/wp-graphql/wp-graphql/issues",
-                "source": "https://github.com/wp-graphql/wp-graphql/tree/v1.8.6"
-            },
-            "time": "2022-06-24T21:13:44+00:00"
-        },
-        {
             "name": "wpackagist-plugin/capability-manager-enhanced",
             "version": "2.3.2",
             "source": {
@@ -9254,34 +8316,16 @@
             "homepage": "https://wordpress.org/plugins/siteimprove/"
         },
         {
-            "name": "wpackagist-plugin/tablepress",
-            "version": "1.14",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/tablepress/",
-                "reference": "tags/1.14"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/tablepress.1.14.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/tablepress/"
-        },
-        {
             "name": "wpackagist-plugin/wordpress-seo",
-            "version": "17.9",
+            "version": "19.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wordpress-seo/",
-                "reference": "tags/17.9"
+                "reference": "tags/19.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.17.9.zip"
+                "url": "https://downloads.wordpress.org/plugin/wordpress-seo.19.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -9291,15 +8335,15 @@
         },
         {
             "name": "wpackagist-plugin/wp-saml-auth",
-            "version": "1.2.7",
+            "version": "2.0.1",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/wp-saml-auth/",
-                "reference": "tags/1.2.7"
+                "reference": "tags/2.0.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wp-saml-auth.1.2.7.zip"
+                "url": "https://downloads.wordpress.org/plugin/wp-saml-auth.2.0.1.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
@@ -9342,32 +8386,12 @@
             },
             "type": "wordpress-theme",
             "homepage": "https://wordpress.org/themes/hello-elementor/"
-        },
-        {
-            "name": "wpackagist-theme/twentyseventeen",
-            "version": "2.9",
-            "source": {
-                "type": "svn",
-                "url": "https://themes.svn.wordpress.org/twentyseventeen/",
-                "reference": "2.9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/theme/twentyseventeen.2.9.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-theme",
-            "homepage": "https://wordpress.org/themes/twentyseventeen/"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "colbycommunications/colby-groups": 20,
-        "colbycommunications/colby-base-theme": 20,
         "colbycommunications/colby-small-town-jewish-life-theme": 20
     },
     "prefer-stable": false,
