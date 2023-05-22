@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /wp-content/cache/
+Disallow: /author/
+Disallow: /category/
+Disallow: /tag/
+Disallow: /search/
+
+Sitemap: https://jewishlife.colby.edu/sitemap_index.xml
