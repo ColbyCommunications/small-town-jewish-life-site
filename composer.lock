@@ -94,7 +94,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "9d3de1fd0a8a81033f7700e9d2dc8d2c567f3115"
+                "reference": "bc7ead39f6c54ce29de7ea4917671d8b12f068e5"
             },
             "require": {
                 "php": "^7.4|^8.0",
@@ -160,7 +160,7 @@
                 "issues": "https://github.com/roots/sage/issues",
                 "forum": "https://discourse.roots.io/"
             },
-            "time": "2022-06-22T15:10:27+00:00"
+            "time": "2023-05-22T16:07:03+00:00"
         },
         {
             "name": "colbycommunications/colby-ticket",
@@ -2222,16 +2222,16 @@
         },
         {
             "name": "johnpbloch/wordpress-core",
-            "version": "6.2.1",
+            "version": "6.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress-core.git",
-                "reference": "5c079d327a849f6ca05082a5099879f4ffc50597"
+                "reference": "5ed6d4a0469ff42d7ec4a1f72558be8f897a6e18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/5c079d327a849f6ca05082a5099879f4ffc50597",
-                "reference": "5c079d327a849f6ca05082a5099879f4ffc50597",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/5ed6d4a0469ff42d7ec4a1f72558be8f897a6e18",
+                "reference": "5ed6d4a0469ff42d7ec4a1f72558be8f897a6e18",
                 "shasum": ""
             },
             "require": {
@@ -2239,7 +2239,7 @@
                 "php": ">=5.6.20"
             },
             "provide": {
-                "wordpress/core-implementation": "6.2.1"
+                "wordpress/core-implementation": "6.2.2"
             },
             "type": "wordpress-core",
             "notification-url": "https://packagist.org/downloads/",
@@ -2266,7 +2266,7 @@
                 "source": "https://core.trac.wordpress.org/browser",
                 "wiki": "https://codex.wordpress.org/"
             },
-            "time": "2023-05-16T16:54:48+00:00"
+            "time": "2023-05-20T04:40:42+00:00"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -2893,16 +2893,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.4",
+            "version": "v4.15.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290"
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
-                "reference": "6bb5176bc4af8bcb7d926f88718db9b96a2d4290",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/11e2663a5bc9db5d714eedb4277ee300403b4a9e",
+                "reference": "11e2663a5bc9db5d714eedb4277ee300403b4a9e",
                 "shasum": ""
             },
             "require": {
@@ -2943,9 +2943,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.4"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.5"
             },
-            "time": "2023-03-05T19:49:14+00:00"
+            "time": "2023-05-19T20:20:00+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -6538,16 +6538,16 @@
         },
         {
             "name": "wp-cli/entity-command",
-            "version": "v2.4.3",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wp-cli/entity-command.git",
-                "reference": "931bf8f28cc804fcebbcd484375e27116658de79"
+                "reference": "ca979c45ccb69c010bbbd6d4eee9df1ff4c839da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/931bf8f28cc804fcebbcd484375e27116658de79",
-                "reference": "931bf8f28cc804fcebbcd484375e27116658de79",
+                "url": "https://api.github.com/repos/wp-cli/entity-command/zipball/ca979c45ccb69c010bbbd6d4eee9df1ff4c839da",
+                "reference": "ca979c45ccb69c010bbbd6d4eee9df1ff4c839da",
                 "shasum": ""
             },
             "require": {
@@ -6743,9 +6743,9 @@
             "homepage": "https://github.com/wp-cli/entity-command",
             "support": {
                 "issues": "https://github.com/wp-cli/entity-command/issues",
-                "source": "https://github.com/wp-cli/entity-command/tree/v2.4.3"
+                "source": "https://github.com/wp-cli/entity-command/tree/v2.5.0"
             },
-            "time": "2023-05-08T19:35:25+00:00"
+            "time": "2023-05-18T10:23:46+00:00"
         },
         {
             "name": "wp-cli/eval-command",
@@ -8288,15 +8288,15 @@
         },
         {
             "name": "wpackagist-plugin/query-monitor",
-            "version": "3.12.2",
+            "version": "3.12.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/query-monitor/",
-                "reference": "tags/3.12.2"
+                "reference": "tags/3.12.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.12.2.zip"
+                "url": "https://downloads.wordpress.org/plugin/query-monitor.3.12.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
