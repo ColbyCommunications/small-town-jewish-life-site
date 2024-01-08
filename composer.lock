@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b411b0cd7161dd013702684220e2dc76",
+    "content-hash": "50252263060faa725307621733040579",
     "packages": [
         {
             "name": "colbycommunications/advanced-custom-fields-pro",
@@ -62,16 +62,16 @@
         },
         {
             "name": "colbycommunications/elementor-pro",
-            "version": "3.18.0",
+            "version": "3.18.2",
             "source": {
                 "type": "git",
                 "url": "git@github.com:ColbyCommunications/elementor-pro.git",
-                "reference": "8d0f8c44fca3f22dbc6680fc718ecaa43d6761ca"
+                "reference": "9a83cb5139189dbeb9ec526d548b2b992e4e3fea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://satis.colby.edu/dist/colbycommunications/elementor-pro/colbycommunications-elementor-pro-8d0f8c44fca3f22dbc6680fc718ecaa43d6761ca-zip-6eb87d.zip",
-                "reference": "8d0f8c44fca3f22dbc6680fc718ecaa43d6761ca"
+                "url": "https://satis.colby.edu/dist/colbycommunications/elementor-pro/colbycommunications-elementor-pro-9a83cb5139189dbeb9ec526d548b2b992e4e3fea-zip-df4ef1.zip",
+                "reference": "9a83cb5139189dbeb9ec526d548b2b992e4e3fea"
             },
             "type": "wordpress-plugin",
             "authors": [
@@ -85,7 +85,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2023-12-05T20:09:26+00:00"
+            "time": "2024-01-08T14:30:42+00:00"
         },
         {
             "name": "colbycommunications/gravityforms",
@@ -5281,15 +5281,15 @@
         },
         {
             "name": "wpackagist-plugin/elementor",
-            "version": "3.18.0",
+            "version": "3.18.3",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/elementor/",
-                "reference": "tags/3.18.0"
+                "reference": "tags/3.18.3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/elementor.3.18.0.zip"
+                "url": "https://downloads.wordpress.org/plugin/elementor.3.18.3.zip"
             },
             "require": {
                 "composer/installers": "^1.0 || ^2.0"
