@@ -26,7 +26,8 @@
         "wpackagist-plugin/wp-search-with-algolia": "2.8.1",
         "vlucas/phpdotenv": "^5.4",
         "wpackagist-plugin/wp-nested-pages": "3.2.8",
-        "wpackagist-plugin/disable-comments": "2.4.6"
+        "wpackagist-plugin/disable-comments": "2.4.6",
+        "colbycommunications/wp-all-export-pro": "1.9.2"
     },
     "authors": [
         {
