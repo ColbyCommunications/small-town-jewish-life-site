@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d4ae0d8d898ed68a8e6c46b21d7f7763",
+    "content-hash": "c83ff8d8e3543527a8fa2714da910a77",
     "packages": [
         {
             "name": "colbycommunications/advanced-custom-fields-pro",
@@ -5481,24 +5481,6 @@
                 "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.4.1"
             },
             "time": "2024-10-16T12:50:47+00:00"
-        },
-        {
-            "name": "wpackagist-plugin/capability-manager-enhanced",
-            "version": "2.13.0",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/capability-manager-enhanced/",
-                "reference": "tags/2.13.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/capability-manager-enhanced.2.13.0.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/capability-manager-enhanced/"
         },
         {
             "name": "wpackagist-plugin/classic-editor",
