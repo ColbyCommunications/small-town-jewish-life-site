@@ -26,7 +26,8 @@
         "vlucas/phpdotenv": "^5.4",
         "wpackagist-plugin/wp-nested-pages": "3.2.10",
         "wpackagist-plugin/disable-comments": "2.4.6",
-        "colbycommunications/wp-all-export-pro": "1.9.4"
+        "colbycommunications/wp-all-export-pro": "1.9.4",
+        "wpackagist-plugin/disable-everything": "0.4.1"
     },
     "authors": [
         {
