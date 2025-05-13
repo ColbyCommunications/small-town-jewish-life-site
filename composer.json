@@ -1,5 +1,5 @@
 {
-    "name": "colby-college/platform-wp-starter",
+    "name": "colby-college/jewishlife",
     "description": "Starter template for the colby theme",
     "type": "project",
     "require": {
@@ -19,6 +19,7 @@
         "wpackagist-plugin/wp-search-with-algolia": "2.8.1",
         "vlucas/phpdotenv": "^5.4",
         "colbycommunications/colby-college-theme": "3.0.1",
+        "colbycommunications/colby-small-town-jewish-life-theme": "dev-dev",
         "timber/timber": "2.3.1",
         "wpackagist-plugin/regenerate-thumbnails": "3.1.6",
         "wpackagist-plugin/disable-comments": "2.4.6",
@@ -43,6 +44,10 @@
         {
             "type": "git",
             "url": "https://github.com/ColbyCommunications/colby-college-theme"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme"
         }
     ],
     "extra": {
