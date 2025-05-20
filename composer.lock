@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "351e9a0b5e6ffe91210fc0d2462570e7",
+    "content-hash": "2d13a8d4c8e9730c0e6fe608880352a8",
     "packages": [
         {
             "name": "brick/math",
@@ -8613,6 +8613,24 @@
                 "source": "https://github.com/wp-cli/wp-config-transformer/tree/v1.4.2"
             },
             "time": "2025-03-31T08:37:05+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/cf-images",
+            "version": "1.9.4",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/cf-images/",
+                "reference": "tags/1.9.4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/cf-images.1.9.4.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/cf-images/"
         },
         {
             "name": "wpackagist-plugin/cloudflare",
