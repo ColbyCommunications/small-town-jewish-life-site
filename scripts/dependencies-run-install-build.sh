@@ -15,6 +15,13 @@ yarn
 yarn scripts:build
 cd -
 
+printf "Build Jewish Life Theme... \n"
+cd web/wp-content/themes/colby-small-town-jewish-life-theme
+composer install
+composer dump-autoload
+yarn
+yarn scripts:build
+cd -
 
 # npm install
 shopt -u extglob
