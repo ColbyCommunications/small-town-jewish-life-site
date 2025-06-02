@@ -176,7 +176,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ColbyCommunications/colby-small-town-jewish-life-theme",
-                "reference": "38aefbc861cb4ba4568f25408c8a4278bbeb4c8d"
+                "reference": "902a57e3c92e776391e2ca2856d68b9a83f2d2ed"
             },
             "require": {
                 "php": ">=7.1",
@@ -193,7 +193,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2025-05-20T14:36:22+00:00"
+            "time": "2025-05-23T15:05:30+00:00"
         },
         {
             "name": "colbycommunications/colby-ticket",
