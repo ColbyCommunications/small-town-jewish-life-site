@@ -25,7 +25,9 @@
         "wpackagist-plugin/disable-comments": "2.4.6",
         "colbycommunications/capabilities-pro": "2.13.0",
         "wpackagist-plugin/wp-nested-pages": "3.2.10",
-        "wpackagist-plugin/cf-images": "1.9.4"
+        "wpackagist-plugin/cf-images": "1.9.4",
+        "colbycommunications/wp-all-export-pro": "1.9.4",
+        "wpackagist-plugin/disable-everything": "0.4.1"
     },
     "authors": [
         {
