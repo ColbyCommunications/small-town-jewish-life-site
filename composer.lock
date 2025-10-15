@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1d3eca46d7be7c6b5420a47fde3a4244",
+    "content-hash": "9c6869d6266250ec2b502e72fbcc293b",
     "packages": [
         {
             "name": "colbycommunications/advanced-custom-fields-pro",
@@ -5988,24 +5988,6 @@
             "homepage": "https://wordpress.org/plugins/header-footer/"
         },
         {
-            "name": "wpackagist-plugin/media-sync",
-            "version": "1.4.8",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/media-sync/",
-                "reference": "tags/1.4.8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/media-sync.1.4.8.zip"
-            },
-            "require": {
-                "composer/installers": "^1.0 || ^2.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/media-sync/"
-        },
-        {
             "name": "wpackagist-plugin/public-post-preview",
             "version": "3.0.1",
             "source": {
@@ -6040,6 +6022,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/regenerate-thumbnails/"
+        },
+        {
+            "name": "wpackagist-plugin/svg-support",
+            "version": "2.5.8",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/svg-support/",
+                "reference": "tags/2.5.8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/svg-support.2.5.8.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/svg-support/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
