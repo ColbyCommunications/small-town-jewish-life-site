@@ -1,0 +1,10 @@
+'^/wp-admin$':
+  to: "/wp/wp-admin/"
+  regexp: true
+'^/wp-admin/(.*)':
+  to: "/wp/wp-admin/$1"
+  regexp: true
+'^/donate/?$': 
+  to: 'https://alumni.colby.edu/center-for-small-town-jewish-life-giving-page/'   
+  regexp: true
+  code: 301
