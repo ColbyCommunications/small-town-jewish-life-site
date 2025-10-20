@@ -1,0 +1,12 @@
+{
+    "require": {
+        "wpackagist-plugin/svg-support": "2.5.8",
+        "wpackagist-plugin/cf-images": "1.9.4",
+        "colbycommunications/wp-all-export-pro": "1.9.4",
+        "wpackagist-plugin/disable-everything": "0.4.1"
+    },
+    "repositories": [],
+    "extra": {
+        "installer-paths": {}
+    }
+}
