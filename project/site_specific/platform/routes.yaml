@@ -45,7 +45,7 @@
   regexp: true
   code: 301
 '^/programs/shlichei-tzibur-training/?$': 
-  to: '/maine/lifelong-learning/'   
+  to: '/shlichei-tzibur-training/'   
   regexp: true
   code: 301
 '^/programs/the-lipman-lecture/?$': 
