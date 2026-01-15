@@ -141,6 +141,7 @@ jobs:
         run: |
           git config --global user.email "webmaster@colby.edu"
           git config --global user.name "Colby Webmaster"
+          git config pull.rebase false
           git clone --branch ghpages git@github.com:ColbyCommunications/${{ github.event.repository.name }}.git public
           rm -rf public/.git
       - name: Download lighthouse results
