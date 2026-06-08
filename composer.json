@@ -28,8 +28,8 @@
         "colbycommunications/presspermit-pro": "4.8.2",
         "wpackagist-plugin/advanced-gutenberg": "3.7.1",
         "wpackagist-plugin/tinymce-advanced": "5.9.2",
-        "wpackagist-plugin/svg-support": "2.5.8",
-        "wpackagist-plugin/cf-images": "1.9.4",
+        "wpackagist-plugin/svg-support": "2.5.16",
+        "wpackagist-plugin/cf-images": "1.10.3",
         "colbycommunications/wp-all-export-pro": "1.9.4",
         "wpackagist-plugin/disable-everything": "0.4.1"
     },
